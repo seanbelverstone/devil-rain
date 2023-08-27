@@ -1,5 +1,9 @@
 :root {
-	--background-color: #182128
+	--background-color: #182128;
+	--accent: #df2727;
+	--primary: #737475;
+	--secondary: #1b73f1;
+	--tertiary: #8c9494;
 }
 
 body {
