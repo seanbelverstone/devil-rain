@@ -1,0 +1,28 @@
+:root {
+	--background-color: #182128;
+	--accent: #df2727;
+	--primary: #737475;
+	--secondary: #1b73f1;
+	--tertiary: #8c9494;
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+/* Animations */
+@keyframes hoverFade {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	25% {
+		background-color: white;
+		transform: scale(1.2);
+	}
+	100% {
+		opacity: 0.2;
+		transform: scale(1);
+		background-color: white;
+	}
+}

@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, Suspense } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Videos from './pages/Videos';
+import Contact from './pages/Contact';
+import Merch from './pages/Merch';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
 
-export default App;
+	return (
+		<Routes>
+			<Route path="/" element={<Home />} />
+			<Route path="/videos" element={<Videos />} />
+			<Route path="/contact" element={<Contact />} />
+			<Route path="/merch" element={<Merch />} />
+		</Routes>
+	);
+};
+
+const Root = () => (
+	<Suspense fallback={Home}>
+		<BrowserRouter>
+			<Navbar />
+			<App />
+		</BrowserRouter>
+	</Suspense>
+);
+
+export default Root;

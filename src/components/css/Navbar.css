@@ -1,0 +1,40 @@
+.navbar {
+	background-color: var(--accent);
+	border-bottom: 5px solid white;
+	border-left: 5px solid white;
+	border-right: 5px solid white;
+	border-radius: 0 0 20px 20px;
+	width: 20em;
+	display: flex;
+	gap: 25px;
+	justify-content: center;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 5px 0 5px 0;
+}
+
+.navicon {
+	font-size: 2.5em;
+	font-weight: 600;
+	padding: 5px;
+	color: black;
+	border-radius: 25px;
+}
+
+.active {
+	background-color: white;
+	border-radius: 25px;
+}
+
+#facebookIcon {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50px;
+	margin: 5px;
+	border-radius: 25px;
+}
+
+.navicon:hover, #facebookIcon:hover {
+	animation: hoverFade 0.3s forwards ease-in-out;
+}
