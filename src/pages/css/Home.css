@@ -1,0 +1,11 @@
+.homePage {
+	display: flex;
+	justify-content: center;
+}
+
+#bandLogo {
+	width: 35em;
+	border: none;
+	margin-top: 5em;
+	animation: riseAndFadeIn 1s forwards ease-in-out;
+}
