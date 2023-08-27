@@ -1,10 +1,12 @@
+import React from 'react';
+
 function Merch() {
 	return (
-	  <div className="merchPage">
-		  {/* Navbar */}
-	  </div>
+		<div className="merchPage">
+			I am the merch page
+		</div>
 	);
-  }
+}
   
-  export default Merch;
+export default Merch;
   

@@ -1,10 +1,13 @@
+import React from 'react';
+
+
 function Contact() {
 	return (
-	  <div className="contactPage">
-		  {/* Navbar */}
-	  </div>
+		<div className="contactPage">
+		I am the contact page
+		</div>
 	);
-  }
+}
   
-  export default Contact;
+export default Contact;
   
