@@ -17,12 +17,26 @@ body {
 		transform: scale(1);
 	}
 	25% {
-		background-color: white;
+		background-color: var(--accent);
 		transform: scale(1.2);
 	}
 	100% {
 		opacity: 0.2;
 		transform: scale(1);
-		background-color: white;
+		background-color: var(--accent);
+	}
+}
+
+@keyframes riseAndFadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(5em);
+	}
+	75% {
+		transform: translateY(-1em);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0em);
 	}
 }

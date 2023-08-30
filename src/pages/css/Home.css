@@ -1,0 +1,26 @@
+.homePage {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	/* margin: 1em; */
+	gap: 20px;
+}
+
+#imageOne {
+	border-radius: 5px;
+	width: 100%;
+}
+
+#nameBackground {
+	position: absolute;
+	top: 45%;
+	background: white;
+	opacity: 0.85;
+	height: 8em;
+	width: 100%;
+}
+
+#bandName {
+	position: absolute;
+	top: 45%;
+}
