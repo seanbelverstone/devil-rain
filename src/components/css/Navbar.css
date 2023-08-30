@@ -1,35 +1,56 @@
 .navbar {
-	background-color: var(--accent);
-	border-bottom: 5px solid white;
-	border-left: 5px solid white;
-	border-right: 5px solid white;
-	border-radius: 0 0 20px 20px;
-	width: 20em;
+	max-height: 4em;
 	display: flex;
 	gap: 25px;
-	justify-content: center;
-	margin: 0 auto;
-	overflow: hidden;
+	justify-content: space-between;
+	align-items: center;
 	padding: 5px 0 5px 0;
+}
+
+#navNameContainer {
+	flex-grow: 1;
+	margin-left: 5px;
+}
+
+#navNameBackground {
+	background: white;
+	opacity: 0.8;
+    width: 10.5em;
+    height: 2.5em;
+	border-radius: 5px;
+}
+
+#navName {
+	width: 10em;
+	border: none;
+	/* animation: riseAndFadeIn 1s forwards ease-in-out; */
+	margin: 5px;
 }
 
 .navicon {
 	font-size: 2.5em;
 	font-weight: 600;
 	padding: 5px;
-	color: black;
+	color: white;
 	border-radius: 25px;
+}
+
+.navlinks {
+	display: inline-block;
+	margin: 5px;
+}
+
+#merch {
+	margin-right: 2em;
 }
 
 .active {
-	background-color: white;
+	background-color: var(--accent);
 	border-radius: 25px;
+	height: 100%;
 }
 
 #facebookIcon {
-	position: absolute;
-	right: 0;
-	top: 0;
 	width: 50px;
 	margin: 5px;
 	border-radius: 25px;

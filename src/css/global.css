@@ -17,13 +17,13 @@ body {
 		transform: scale(1);
 	}
 	25% {
-		background-color: white;
+		background-color: var(--accent);
 		transform: scale(1.2);
 	}
 	100% {
 		opacity: 0.2;
 		transform: scale(1);
-		background-color: white;
+		background-color: var(--accent);
 	}
 }
 

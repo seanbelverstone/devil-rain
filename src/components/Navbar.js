@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import facebookIcon from '../assets/facebookLogo.png';
+import bandName from '../assets/bandImages/bandName.png';
 import './css/Navbar.css';
 
 function Navbar() {
@@ -18,10 +19,18 @@ function Navbar() {
 	};
 
 	return (
-		<>
-			<div className="navbar">
+		<div className="navbar">
+			<div id="navNameContainer">
+				<div id="navNameBackground">
+					<img src={bandName} id="navName" alt=""/>
+				</div>
+			</div>
+			<div id="navlinkContainer">
 				<NavLink className="navlinks" to="/">
 					<span className="material-symbols-outlined navicon" id="home" alt="home">home</span>
+				</NavLink>
+				<NavLink className="navlinks" to="/about">
+					<span className="material-symbols-outlined navicon" id="home" alt="home">info</span>
 				</NavLink>
 				<NavLink className="navlinks" to="/videos">
 					<span className="material-symbols-outlined navicon" id="videos">movie</span>
@@ -36,7 +45,7 @@ function Navbar() {
 			<a href="https://www.facebook.com/groups/544578629743391" target="_blank" rel="noreferrer">
 				<img src={facebookIcon} alt="The Facebook icon" id="facebookIcon"/>
 			</a>
-		</>
+		</div>
 	);
 }
   
