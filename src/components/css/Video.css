@@ -1,4 +1,9 @@
+#latestVideo {
+	margin-bottom: 20px;
+	border: 0;
+}
+
 .videosItem {
-	max-width: min-content;
+	max-width: 375px;
 	margin: 0;
 };

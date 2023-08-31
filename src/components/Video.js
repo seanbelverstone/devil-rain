@@ -8,14 +8,16 @@ export const Video = props => {
 	const { latest } = props;
 	if (latest) {
 		return (
-			<iframe
-				width="600"
-				height="340"
-				src="https://www.youtube.com/embed?listType=user_uploads&list=WeHateMovies"
-				frameBorder="0"
-				allowfullscreen>
-			</iframe> 
-
+			<div id="latestVideoWrapper">
+				<iframe
+					id="latestVideo"
+					width="600"
+					height="340"
+					src="https://www.youtube.com/embed?listType=user_uploads&list=WeHateMovies"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowFullScreen>
+				</iframe>
+			</div>
 		);
 	}
 	return (

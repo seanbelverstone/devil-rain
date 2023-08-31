@@ -5,6 +5,8 @@
 	align-items: center;
 	flex-wrap: wrap;
 	margin: 0 10% 0 10%;
+	background-color: whitesmoke;
+	border: 2px solid var(--accent);
 }
 
 .title {
@@ -16,5 +18,5 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 20px;
+	gap: 10px;
 }
