@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import facebookIcon from '../assets/facebookLogo.png';
-import bandName from '../assets/bandImages/bandName.png';
+import bandLogo from '../assets/bandLogo.jpg';
+import bandName from '../assets/bandName.png';
 import './css/Navbar.css';
 
 function Navbar() {
@@ -21,6 +22,7 @@ function Navbar() {
 	return (
 		<div className="navbar">
 			<div id="navNameContainer">
+				<img src={bandLogo} id="bandLogo" alt=""/>
 				<div id="navNameBackground">
 					<img src={bandName} id="navName" alt=""/>
 				</div>

@@ -1,0 +1,27 @@
+#videosPage {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	/* margin: 0 10% 0 10%; */
+	background-color: whitesmoke;
+	/* border: 2px solid var(--accent);
+	border-radius: 5%; */
+}
+
+.title {
+	flex-grow: 1;
+}
+
+#latestVideosSection {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+}
+
+.loadingMessage {
+	text-align: center;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
-import imageOne from '../assets/bandImages/imageOne.jpg';
-import bandName from '../assets/bandImages/bandName.png';
+import imageOne from '../assets/imageOne.jpg';
+import bandName from '../assets/bandName.png';
 import './css/Home.css';
 
 function Home() {

@@ -8,6 +8,8 @@
 
 body {
 	background-color: var(--background-color);
+	font-family: 'Cabin', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 /* Animations */
