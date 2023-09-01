@@ -28,9 +28,11 @@ function Videos() {
 		!isEmpty(videos) ? (
 			<div id="videosPage">
 				<h1 className="title">Latest Videos</h1>
-				<Video video={latestVideo} latest />
-				<div id="latestVideosSection">
-					{videos.map(video => <Video key={video.guid} video={video} />)}
+				<div className="videosSection">
+					<Video video={latestVideo} latest />
+					<div id="latestVideosSection">
+						{videos.map(video => <Video key={video.guid} video={video} />)}
+					</div>
 				</div>
 			</div>
 		) : (
