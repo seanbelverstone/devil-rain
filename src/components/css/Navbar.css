@@ -8,8 +8,12 @@
 }
 
 #navNameContainer {
+	display: flex;
+	flex-direction: row;
 	flex-grow: 1;
-	margin-left: 5px;
+	align-items: center;
+	gap: 5px;
+	margin-right: 5px;
 }
 
 #navNameBackground {
@@ -27,6 +31,11 @@
 	margin: 5px;
 }
 
+#bandLogo {
+	width: 3em;
+	margin-left: 5px;
+}
+
 .navicon {
 	font-size: 2.5em;
 	font-weight: 600;
@@ -38,10 +47,6 @@
 .navlinks {
 	display: inline-block;
 	margin: 5px;
-}
-
-#merch {
-	margin-right: 2em;
 }
 
 .active {
