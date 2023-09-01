@@ -3,7 +3,33 @@
 	border: 0;
 }
 
-.videosItem {
+#latestVideoWrapper {
+	background-color: var(--tertiary);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 5px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+}
+
+.videoTitle {
+	margin-top: 0;
+}
+
+.videoItem {
 	max-width: 375px;
 	margin: 0;
+	padding: 5px;
+	border-radius: 20px;
+	background-color: var(--tertiary);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 };
+
+.videoImage a img {
+	border-radius: 5%;
+}

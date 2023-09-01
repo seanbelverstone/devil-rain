@@ -1,12 +1,15 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import './css/Video.css';
 import { isEmpty } from '../utils';
+import './css/Video.css';
 
 export const Video = props => {
-	const { latest } = props;
+	const { latest, video } = props;
+
 	if (latest) {
+		const text = video.title.replace(/(&quot;)/g,'"');
+		const title = text.replace(/(&amp;)/g,'&');
 		return (
 			<div id="latestVideoWrapper">
 				<iframe
@@ -17,18 +20,19 @@ export const Video = props => {
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 					allowFullScreen>
 				</iframe>
+				<p className="videoTitle">{title}</p>
 			</div>
 		);
 	}
 	return (
-		<div className="videosItem">
+		<div className="videoItem">
 			<div className="videoImage">
-				<a target="_blank" href={props.video.link} rel="noreferrer">
-					{!isEmpty(props.video.guid) && <img src={`https://i4.ytimg.com/vi/${props.video.guid.split(':')[2]}/mqdefault.jpg`} />}
+				<a target="_blank" href={video.link} rel="noreferrer">
+					{!isEmpty(video.guid) && <img src={`https://i4.ytimg.com/vi/${video.guid.split(':')[2]}/mqdefault.jpg`} />}
 				</a>
 			</div>
 			<div className="videoFooter">
-				<p className="videoTitle">{props.video.title}</p>
+				<p className="videoTitle">{video.title}</p>
 			</div>
 		</div>
 	);
