@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './css/Contact.css';
 import Input from '../components/Input';
+import { Button } from '../components/Button';
 
 
 function Contact() {
@@ -50,6 +51,7 @@ function Contact() {
 					type="textarea"
 					callback={setMessage}
 				/>
+				<Button type="submit" text="Submit" />
 			</form>
 		</div>
 	);

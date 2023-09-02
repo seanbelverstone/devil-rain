@@ -1,0 +1,25 @@
+.button {
+	background-color: var(--background-color);
+	color: white;
+	padding: 5px;
+	font-size: 1.125em;
+	border-radius: 10px;
+	min-width: min-content;
+	max-width: max-content;
+	align-self: center;
+	margin-top: 20px;
+}
+
+.button:hover {
+	opacity: 0.8;
+	transform: scale(1.1);
+}
+
+.button:focus {
+	border: 2px solid var(--accent);
+}
+
+.button:active {
+	opacity: 0.7;
+	transform: scale(0.9)
+}

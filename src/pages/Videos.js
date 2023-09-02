@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Video } from '../components/Video';
+import { VideoCard } from '../components/VideoCard';
 import './css/Videos.css';
 import { isEmpty } from '../utils';
 
@@ -28,9 +28,9 @@ function Videos() {
 			<div className="page">
 				<h1 className="title">Latest Videos</h1>
 				<div className="videosSection">
-					<Video video={latestVideo} latest />
+					<VideoCard video={latestVideo} latest />
 					<div id="latestVideosSection">
-						{videos.map(video => <Video key={video.guid} video={video} />)}
+						{videos.map(video => <VideoCard key={video.guid} video={video} />)}
 					</div>
 				</div>
 			</div>
