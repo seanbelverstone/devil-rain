@@ -25,7 +25,7 @@ function Contact() {
 	return (
 		<div className="page">
 			<h1 className="title">Contact</h1>
-			<form>
+			<form id="contactForm">
 				<Input
 					id="name"
 					label="Full Name"

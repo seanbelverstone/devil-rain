@@ -8,8 +8,11 @@
 
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import './css/Input.css';
+import PhoneInput from 'react-phone-number-input';
 import { isEmpty } from '../utils';
+import 'react-phone-number-input/style.css';
+import './css/Input.css';
+import { isValidPhoneNumber } from 'react-phone-number-input';
 
 const Input = (props) => {
 	const { id, label, type, callback } = props;
@@ -17,15 +20,19 @@ const Input = (props) => {
 	const [error, setError] = useState('');
 
 	useEffect(() => {
+		setError('');
 		const isValid = validate(value);
-		isValid ? setError('') : setError(`Please enter a valid ${type === 'tel' ? 'telephone number' : type}.`);
+		const delayError = setTimeout(() => {
+			isValid ? setError('') : setError(`Please enter a valid ${type === 'tel' ? 'telephone number' : type}.`);
+		}, 1000);
 		callback({
 			value,
 			valid: isValid
 		});
+		return () => clearTimeout(delayError);
 	}, [value]);
 
-	const handleInputChange = (e) => setValue(e.target.value);
+	const handleInputChange = (e) => setValue(e?.target ? e.target.value : e);
 
 	const validate = (currentValue) => {
 		if (isEmpty(currentValue)) {
@@ -39,34 +46,44 @@ const Input = (props) => {
 			const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 			return re.test(currentValue);
 		}
+		if (type === 'tel') {
+			return isValidPhoneNumber(currentValue);
+		}
 		return true;
 	};
 
 	return (
 		<div className="inputWrapper">
-			<label>
-				{label}
-				{type !== 'textarea' ? (
-					<input
-						className="input"
-						type={type}
-						id={id}
-						name={id}
-						value={value}
-						onChange={handleInputChange}
-					/>
-				) : (
-					<textarea
-						className="textarea"
-						type={type}
-						id={id}
-						name={id}
-						value={value}
-						onChange={handleInputChange}
-					/>
-				)}
-			</label>
-			{error && !isEmpty(value) && (
+			<label className="label">{label}</label>
+			{(type === 'name' || type === 'email') && (
+				<input
+					className="input"
+					type={type}
+					id={id}
+					name={id}
+					value={value}
+					onChange={handleInputChange}
+				/>
+			)}
+			{type === 'textarea' && (
+				<textarea
+					className="textarea"
+					type={type}
+					id={id}
+					name={id}
+					value={value}
+					onChange={handleInputChange}
+				/>
+			)}
+			{type === 'tel' && (
+				<PhoneInput
+					defaultCountry="GB"
+					value={value}
+					onChange={handleInputChange}
+					international
+				/>
+			)}
+			{!isEmpty(error) && !isEmpty(value) && (
 				<div className="error" style={{ color: 'var(--accent)'}}>
 					{error}
 				</div>
