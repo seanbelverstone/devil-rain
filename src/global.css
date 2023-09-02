@@ -42,3 +42,23 @@ body {
 		transform: translateY(0em);
 	}
 }
+
+@keyframes videoEnter {
+	0% {
+		opacity: 1.0;
+	}
+	100% {
+		opacity: 0.2;
+	}
+	
+}
+
+@keyframes videoEnter {
+	0% {
+		opacity: 0.2;
+	}
+	100% {
+		opacity: 1.0;
+	}
+	
+}

@@ -7,6 +7,14 @@ import './css/Video.css';
 export const Video = props => {
 	const { latest, video } = props;
 
+	const enterHover = (e) => {
+		e.target.style = 'animation: videoEnter 0.3s forwards ease-in-out;';
+	};
+
+	const exitHover = (e) => {
+		e.target.style = 'animation: videoLeave 0.3s forwards ease-in-out;';
+	};
+
 	if (latest) {
 		const text = video.title.replace(/(&quot;)/g,'"');
 		const title = text.replace(/(&amp;)/g,'&');
@@ -25,7 +33,7 @@ export const Video = props => {
 		);
 	}
 	return (
-		<div className="videoItem">
+		<div className="videoItem" onMouseEnter={enterHover} onMouseLeave={exitHover}>
 			<div className="videoImage">
 				<a target="_blank" href={video.link} rel="noreferrer">
 					{!isEmpty(video.guid) && <img src={`https://i4.ytimg.com/vi/${video.guid.split(':')[2]}/mqdefault.jpg`} />}
