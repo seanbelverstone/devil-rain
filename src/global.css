@@ -12,6 +12,15 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+.page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	background-color: whitesmoke;
+}
+
 /* Animations */
 @keyframes hoverFade {
 	0% {

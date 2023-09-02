@@ -26,7 +26,7 @@ function Videos() {
 
 	return (
 		!isEmpty(videos) ? (
-			<div id="videosPage">
+			<div className="page">
 				<h1 className="title">Latest Videos</h1>
 				<div className="videosSection">
 					<Video video={latestVideo} latest />
