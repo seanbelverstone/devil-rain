@@ -23,7 +23,7 @@ const Input = (props) => {
 		setError('');
 		const isValid = validate(value);
 		const delayError = setTimeout(() => {
-			isValid ? setError('') : setError(`Please enter a valid ${type === 'tel' ? 'telephone number' : type}.`);
+			isValid ? setError('') : setCustomErrorText();
 		}, 1000);
 		callback({
 			value,
@@ -33,6 +33,16 @@ const Input = (props) => {
 	}, [value]);
 
 	const handleInputChange = (e) => setValue(e?.target ? e.target.value : e);
+
+	const setCustomErrorText = () => {
+		if (type === 'name' || type === 'email') {
+			setError(`Please enter a valid ${type}.`);
+		} else if (type === 'tel') {
+			setError('Please enter a valid telephone number.');
+		} else {
+			setError('Messages must be longer than 10 characters.');
+		}
+	};
 
 	const validate = (currentValue) => {
 		if (isEmpty(currentValue)) {
@@ -48,6 +58,9 @@ const Input = (props) => {
 		}
 		if (type === 'tel') {
 			return isValidPhoneNumber(currentValue);
+		}
+		if (type === 'textarea') {
+			return currentValue.length > 10;
 		}
 		return true;
 	};
@@ -84,7 +97,7 @@ const Input = (props) => {
 				/>
 			)}
 			{!isEmpty(error) && !isEmpty(value) && (
-				<div className="error" style={{ color: 'var(--accent)'}}>
+				<div className="error">
 					{error}
 				</div>
 			)}
