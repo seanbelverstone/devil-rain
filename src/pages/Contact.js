@@ -35,7 +35,6 @@ function Contact() {
 		setLoading(true);
 		emailjs.send('service_o7pljfm', 'template_qt4stmb', data, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
 			.then((res) => {
-				console.log(res, res.status === 200);
 				if (res.status === 200) {
 					setTimeout(() => {
 						setLoading(false);
@@ -47,6 +46,8 @@ function Contact() {
 						// display success message
 					}, 2000);
 					setClearInput(false);
+				} else {
+					// display error message
 				}
 			});
 	};

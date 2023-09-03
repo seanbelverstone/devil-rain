@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { VideoCard } from '../components/VideoCard';
 import './css/Videos.css';
 import { isEmpty } from '../utils';
+import { LoadingIcon } from '../components/LoadingIcon';
 
 function Videos() {
 	const [latestVideo, setLatestVideo] = useState({});
@@ -35,7 +36,10 @@ function Videos() {
 				</div>
 			</div>
 		) : (
-			<h1 className="loadingMessage">Loading...</h1>
+			<div className="loadingSection">
+				<h1 className="loadingMessage">Loading...</h1>
+				<LoadingIcon />
+			</div>
 		)
 
 	);

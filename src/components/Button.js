@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
-
 import React from 'react';
 import PropTypes from 'prop-types';
+import { LoadingIcon } from './LoadingIcon.js';
 import './css/Button.css';
 
 export const Button = props => {
@@ -24,7 +23,7 @@ export const Button = props => {
 			disabled={buttonDisabled || loading}
 		>
 			{loading ? (
-				<div className='loadingIcon'></div>
+				<LoadingIcon />
 			) : text}
 		</button>
 	);
