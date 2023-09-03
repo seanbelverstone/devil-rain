@@ -6,8 +6,10 @@ import './css/Button.css';
 export const Button = props => {
 	const { callback, text, type, wrapperStyle, validFields } = props;
 	const buttonDisabled = !(validFields.every(field => field === true));
+
 	const handleCallback = (e) => {
 		e.preventDefault();
+		console.log(!buttonDisabled);
 		!buttonDisabled && callback && callback();
 	};
 

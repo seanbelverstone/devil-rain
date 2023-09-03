@@ -15,7 +15,7 @@ import './css/Input.css';
 import { isValidPhoneNumber } from 'react-phone-number-input';
 
 const Input = (props) => {
-	const { id, label, type, callback } = props;
+	const { id, label, type, callback, clearInput } = props;
 	const [value, setValue] = useState('');
 	const [error, setError] = useState('');
 
@@ -31,6 +31,13 @@ const Input = (props) => {
 		});
 		return () => clearTimeout(delayError);
 	}, [value]);
+
+	useEffect(() => {
+		if (clearInput) {
+			setValue('');
+			setError('');
+		}
+	}, [clearInput]);
 
 	const handleInputChange = (e) => setValue(e?.target ? e.target.value : e);
 
@@ -109,14 +116,16 @@ Input.propTypes = {
 	id: PropTypes.string,
 	label: PropTypes.string,
 	type: PropTypes.string,
-	callback: PropTypes.func
+	callback: PropTypes.func,
+	clearInput: PropTypes.bool
 };
 
 Input.defaultProps = {
 	id: '',
 	label: '',
 	type: '',
-	callback: () => {}
+	callback: () => {},
+	clearInput: false
 };
 
 export default Input;
