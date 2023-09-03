@@ -23,6 +23,7 @@ function Contact() {
 		valid: false
 	});
 	const [clearInput, setClearInput] = useState(false);
+	const [loading, setLoading] = useState(false);
 
 	const handleSubmit = () => {
 		const data = {
@@ -31,18 +32,18 @@ function Contact() {
 			telephoneNumber: phoneNumber.value,
 			message: message.value
 		};
-		// add loading symbol while it sends
+		setLoading(true);
 		emailjs.send('service_o7pljfm', 'template_qt4stmb', data, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
 			.then((res) => {
 				console.log(res, res.status === 200);
 				if (res.status === 200) {
 					setTimeout(() => {
+						setLoading(false);
 						setName({ value: '', valid: false });
 						setEmail({ value: '', valid: false });
 						setPhoneNumber({ value: '', valid: false });
 						setMessage({ value: '', valid: false });
 						setClearInput(true);
-						// stop loading here
 						// display success message
 					}, 2000);
 					setClearInput(false);
@@ -53,7 +54,7 @@ function Contact() {
 	return (
 		<div className="page">
 			<h1 className="title">Contact Us</h1>
-			<form id="contactForm">
+			<form id="contactForm" style={loading ? { opacity: 0.8, pointerEvents: 'none' } : {}}>
 				<Input
 					id="name"
 					label="Full Name"
@@ -87,6 +88,7 @@ function Contact() {
 					text="Submit"
 					callback={handleSubmit}
 					validFields={[name.valid, email.valid, phoneNumber.valid, message.valid]}
+					loading={loading}
 				/>
 			</form>
 		</div>

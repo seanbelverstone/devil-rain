@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 
 import React from 'react';
 import PropTypes from 'prop-types';
 import './css/Button.css';
 
 export const Button = props => {
-	const { callback, text, type, wrapperStyle, validFields } = props;
+	const { callback, text, type, wrapperStyle, validFields, loading } = props;
 	const buttonDisabled = !(validFields.every(field => field === true));
 
 	const handleCallback = (e) => {
@@ -19,10 +20,12 @@ export const Button = props => {
 			type={type}
 			onClick={handleCallback}
 			onKeyDown={handleCallback}
-			style={wrapperStyle}
-			disabled={buttonDisabled}
+			style={{ ...wrapperStyle, ...(loading ? { pointerEvents: 'none' } : {}) }}
+			disabled={buttonDisabled || loading}
 		>
-			{text}
+			{loading ? (
+				<div className='loadingIcon'></div>
+			) : text}
 		</button>
 	);
 };
@@ -32,7 +35,8 @@ Button.propTypes = {
 	text: PropTypes.string,
 	type: PropTypes.string,
 	wrapperStyle: PropTypes.oneOfType([PropTypes.object]),
-	validFields: PropTypes.oneOfType([PropTypes.array])
+	validFields: PropTypes.oneOfType([PropTypes.array]),
+	loading: PropTypes.bool
 };
 
 Button.defaultProps = {
@@ -40,5 +44,6 @@ Button.defaultProps = {
 	text: '',
 	type: 'button',
 	wrapperStyle: {},
-	validFields: []
+	validFields: [],
+	loading: false
 };
