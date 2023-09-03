@@ -1,0 +1,8 @@
+.loadingIcon {
+	width: 30px;
+	height: 30px;
+	border: 8px inset var(--accent);
+	border-radius: 50%;
+	letter-spacing: 4px;
+	animation: loading 3s 0.5s infinite forwards ease-in-out;
+}

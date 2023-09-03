@@ -1,8 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { Video } from '../components/Video';
+import { VideoCard } from '../components/VideoCard';
 import './css/Videos.css';
 import { isEmpty } from '../utils';
+import { LoadingIcon } from '../components/LoadingIcon';
 
 function Videos() {
 	const [latestVideo, setLatestVideo] = useState({});
@@ -26,17 +26,20 @@ function Videos() {
 
 	return (
 		!isEmpty(videos) ? (
-			<div id="videosPage">
+			<div className="page">
 				<h1 className="title">Latest Videos</h1>
 				<div className="videosSection">
-					<Video video={latestVideo} latest />
+					<VideoCard video={latestVideo} latest />
 					<div id="latestVideosSection">
-						{videos.map(video => <Video key={video.guid} video={video} />)}
+						{videos.map(video => <VideoCard key={video.guid} video={video} />)}
 					</div>
 				</div>
 			</div>
 		) : (
-			<h1 className="loadingMessage">Loading...</h1>
+			<div className="loadingSection">
+				<h1 className="loadingMessage">Loading...</h1>
+				<LoadingIcon />
+			</div>
 		)
 
 	);

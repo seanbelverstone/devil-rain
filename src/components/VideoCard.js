@@ -2,9 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from '../utils';
-import './css/Video.css';
+import './css/VideoCard.css';
 
-export const Video = props => {
+export const VideoCard = props => {
 	const { latest, video } = props;
 
 	if (latest) {
@@ -38,12 +38,12 @@ export const Video = props => {
 	);
 };
 
-Video.propTypes = {
+VideoCard.propTypes = {
 	video: PropTypes.object,
 	latest: PropTypes.bool
 };
 
-Video.defaultProps = {
+VideoCard.defaultProps = {
 	video: {
 		link: '',
 		guid: ''

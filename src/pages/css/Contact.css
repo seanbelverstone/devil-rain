@@ -1,0 +1,11 @@
+.contactPage {
+	background-color: whitesmoke;
+}
+
+#contactForm {
+	width: 25em;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
