@@ -23,9 +23,11 @@ function Contact() {
 		valid: false
 	});
 
+	const handleSubmit = () => {};
+
 	return (
 		<div className="page">
-			<h1 className="title">Contact</h1>
+			<h1 className="title">Contact Us</h1>
 			<form id="contactForm">
 				<Input
 					id="name"
@@ -51,7 +53,12 @@ function Contact() {
 					type="textarea"
 					callback={setMessage}
 				/>
-				<Button type="submit" text="Submit" />
+				<Button
+					type="submit"
+					text="Submit"
+					callback={handleSubmit}
+					validFields={[name.valid, email.valid, phoneNumber.valid, message.valid, ]}
+				/>
 			</form>
 		</div>
 	);

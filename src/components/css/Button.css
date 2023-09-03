@@ -8,6 +8,8 @@
 	max-width: max-content;
 	align-self: center;
 	margin-top: 20px;
+	font-family: 'Cabin', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .button:hover {
@@ -22,4 +24,9 @@
 .button:active {
 	opacity: 0.7;
 	transform: scale(0.9)
+}
+
+.button:disabled {
+	background-color: var(--tertiary);
+	opacity: 0.8;
 }

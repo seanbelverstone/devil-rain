@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import './css/Button.css';
 
 export const Button = props => {
-	const { callback, text, type, wrapperStyle } = props;
-
+	const { callback, text, type, wrapperStyle, validFields } = props;
+	const buttonDisabled = !(validFields.every(field => field === true));
 	const handleCallback = (e) => {
 		e.preventDefault();
-		callback && callback();
+		!buttonDisabled && callback && callback();
 	};
 
 	return (
@@ -18,6 +18,7 @@ export const Button = props => {
 			onClick={handleCallback}
 			onKeyDown={handleCallback}
 			style={wrapperStyle}
+			disabled={buttonDisabled}
 		>
 			{text}
 		</button>
@@ -28,12 +29,14 @@ Button.propTypes = {
 	callback: PropTypes.func,
 	text: PropTypes.string,
 	type: PropTypes.string,
-	wrapperStyle: PropTypes.oneOfType([PropTypes.object])
+	wrapperStyle: PropTypes.oneOfType([PropTypes.object]),
+	validFields: PropTypes.oneOfType([PropTypes.array])
 };
 
 Button.defaultProps = {
 	callback: () => {},
 	text: '',
 	type: 'button',
-	wrapperStyle: {}
+	wrapperStyle: {},
+	validFields: []
 };
