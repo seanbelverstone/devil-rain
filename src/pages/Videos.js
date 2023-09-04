@@ -7,6 +7,7 @@ import { LoadingIcon } from '../components/LoadingIcon';
 function Videos() {
 	const [latestVideo, setLatestVideo] = useState({});
 	const [videos, setVideos] = useState([]);
+	const [callError, setCallError] = useState(false);
 	const channelId = 'UCEQm0gqdGq7NfPQBVFOYipg';
 
 	const baseUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3D';
@@ -19,14 +20,13 @@ function Videos() {
 				setLatestVideo(latestVideo);
 				setVideos(data.items);
 			} catch (error) {
-				console.log(error);
-				// add error handling here, display an alert
+				setCallError(true);
 			}
 		})();
 	}, [channelId]);
 
-	return (
-		!isEmpty(videos) ? (
+	if (!isEmpty(videos) && !callError) {
+		return (
 			<div className="page">
 				<h1 className="title">Latest Videos</h1>
 				<div className="videosSection">
@@ -36,14 +36,22 @@ function Videos() {
 					</div>
 				</div>
 			</div>
-		) : (
+		);
+	} else if (isEmpty(videos) && !callError) {
+		return (
 			<div className="loadingSection">
 				<h1 className="loadingMessage">Loading...</h1>
 				<LoadingIcon />
 			</div>
-		)
-
-	);
+		);
+	} else {
+		return (
+			<div className="page" style={{ flexDirection: 'column' }}>
+				<h1>No videos to display</h1>
+				<p>It looks like there was an issue getting the videos from YouTube. Please contact us via the <a href="/contact">Contact</a> page</p>
+			</div>
+		);
+	}
 }
   
 export default Videos;
