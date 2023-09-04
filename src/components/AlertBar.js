@@ -37,7 +37,7 @@ export const AlertBar = (props) => {
 				backgroundColor: type === 'success' ? 'var(--secondary)' : 'var(--accent)'
 			}}
 		>
-			<p style={{ color: 'white', marginLeft: '5px', flexGrow: 1 }}>{alertBarText}</p>
+			<p className="alertBarText" style={{ color: 'white', marginLeft: '5px', flexGrow: 1 }}>{alertBarText}</p>
 			<Button
 				id="closeAlertBar"
 				text="x"
