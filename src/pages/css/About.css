@@ -1,0 +1,46 @@
+.carouselContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	overflow: hidden;
+	width: 50em;
+}
+
+.carouselItem {
+	display: flex;
+	flex-direction: row;
+	background-color: var(--background-color);
+	color: white;
+	min-width: 100%;
+	margin-bottom: 5em;
+	transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+	position: relative;
+}
+
+.memberImage {
+	max-width: 20em;
+	max-height: 25em;
+}
+
+.carouselText {
+	min-width: 59%;
+	text-align: center;
+	padding: 5px;
+}
+
+.memberBio {
+	text-align: left;
+}
+
+.navigationButton {
+	position: absolute;
+	top: 45%;
+}
+
+#leftArrow {
+	left: 25%;
+}
+
+#rightArrow {
+	right: 25%;
+}
