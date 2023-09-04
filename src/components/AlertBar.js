@@ -7,9 +7,11 @@ import './css/AlertBar.css';
 
 export const AlertBar = (props) => {
 	const { alertBarDisplay, alertBarText, type, callback } = props;
+	const [isHidden, setIsHidden] = useState(true);
 	const [showAlertBar, setShowAlertBar] = useState(alertBarDisplay);
 
 	useEffect(() => {
+		alertBarDisplay && setIsHidden(false);
 		setShowAlertBar(alertBarDisplay);
 	}, [alertBarDisplay]);
 
@@ -23,15 +25,16 @@ export const AlertBar = (props) => {
 
 	const handleClose = () => {
 		setShowAlertBar(false);
-		callback(false);
+		callback && callback(false);
 	};
 	return (
 		<div
 			className="alertBar"
 			style={{
+				...(isHidden ? { display: 'none' } : { display: 'flex' }),
 				...(alertBarDisplay ? showAlertBarStyle : hideAlertBarStyle),
-				backgroundColor: type === 'success' ? 'var(--secondary)' : 'var(--accent)',
-				...(!showAlertBar ? hideAlertBarStyle : {})
+				...(!showAlertBar ? hideAlertBarStyle : {}),
+				backgroundColor: type === 'success' ? 'var(--secondary)' : 'var(--accent)'
 			}}
 		>
 			<p style={{ color: 'white', marginLeft: '5px', flexGrow: 1 }}>{alertBarText}</p>
