@@ -27,18 +27,20 @@
 	min-width: 100%;
 	margin: 5em 0;
 	transition: 0.5s ease-in-out;
+	border-radius: 20px;
 }
 
 .memberImage {
 	max-width: 20em;
 	max-height: 25em;
 	align-self: center;
+	margin-left: 20px;
 }
 
 .carouselText {
 	min-width: 59%;
 	text-align: center;
-	padding: 5px;
+	padding: 10px;
 }
 
 .memberBio {

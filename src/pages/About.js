@@ -67,7 +67,7 @@ function About() {
 	};
 	return (
 		<div className="page">
-			<h1 className="title">Our Story</h1>
+			<h1 className="title">About Us</h1>
 			<Button id="leftArrow" className="navigationButton" text="<" wrapperStyle={{ fontSize: '2em' }} callback={() => handleNav('back')}/>
 			<div className="carouselContainer">
 				{bandMembers.map(member => (
