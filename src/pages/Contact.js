@@ -58,6 +58,7 @@ function Contact() {
 					setShowAlertBar(true);
 					setAlertBarText('There was an issue sending your message. Please contact us by email directly at (ENTER EMAIL HERE)');
 					setAlertBarType('error');
+					setLoading(false);
 				}
 			});
 	};
