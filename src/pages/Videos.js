@@ -20,6 +20,7 @@ function Videos() {
 				setVideos(data.items);
 			} catch (error) {
 				console.log(error);
+				// add error handling here, display an alert
 			}
 		})();
 	}, [channelId]);

@@ -9,9 +9,10 @@ export const Button = props => {
 	const buttonDisabled = !(validFields.every(field => field === true));
 
 	const handleCallback = (e) => {
-		e.preventDefault();
-		console.log(!buttonDisabled);
-		!buttonDisabled && callback && callback(e);
+		if (!e?.key || e.key === 'Enter') {
+			e.preventDefault();
+			!buttonDisabled && callback && callback(e);
+		}
 	};
 
 	return (
