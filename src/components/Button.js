@@ -4,17 +4,18 @@ import { LoadingIcon } from './LoadingIcon.js';
 import './css/Button.css';
 
 export const Button = props => {
-	const { callback, text, type, wrapperStyle, validFields, loading } = props;
+	const { id, callback, text, type, wrapperStyle, validFields, loading } = props;
 	const buttonDisabled = !(validFields.every(field => field === true));
 
 	const handleCallback = (e) => {
 		e.preventDefault();
 		console.log(!buttonDisabled);
-		!buttonDisabled && callback && callback();
+		!buttonDisabled && callback && callback(e);
 	};
 
 	return (
 		<button
+			id={id}
 			className="button"
 			type={type}
 			onClick={handleCallback}
@@ -24,12 +25,13 @@ export const Button = props => {
 		>
 			{loading ? (
 				<LoadingIcon />
-			) : text}
+			) : <div className="buttonText">{text}</div>}
 		</button>
 	);
 };
 
 Button.propTypes = {
+	id: PropTypes.string,
 	callback: PropTypes.func,
 	text: PropTypes.string,
 	type: PropTypes.string,
@@ -39,6 +41,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+	id: '',
 	callback: () => {},
 	text: '',
 	type: 'button',

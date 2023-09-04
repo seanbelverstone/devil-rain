@@ -3,6 +3,7 @@ import Input from '../components/Input';
 import { Button } from '../components/Button';
 import emailjs from 'emailjs-com';
 import './css/Contact.css';
+import { AlertBar } from '../components/AlertBar';
 
 
 function Contact() {
@@ -25,6 +26,11 @@ function Contact() {
 	const [clearInput, setClearInput] = useState(false);
 	const [loading, setLoading] = useState(false);
 
+	// Alert bar state
+	const [showAlertBar, setShowAlertBar] = useState(false);
+	const [alertBarText, setAlertBarText] = useState('');
+	const [alertBarType, setAlertBarType] = useState('');
+
 	const handleSubmit = () => {
 		const data = {
 			name: name.value,
@@ -43,17 +49,23 @@ function Contact() {
 						setPhoneNumber({ value: '', valid: false });
 						setMessage({ value: '', valid: false });
 						setClearInput(true);
-						// display success message
+						setShowAlertBar(true);
+						setAlertBarText('Your message has been sucessfully sent to Devil Rain and you will recieve a confirmation email. Please allow 1-2 business days for a response.');
+						setAlertBarType('success');
 					}, 2000);
 					setClearInput(false);
 				} else {
-					// display error message
+					setShowAlertBar(true);
+					setAlertBarText('There was an issue sending your message. Please contact us by email directly at (ENTER EMAIL HERE)');
+					setAlertBarType('error');
+					setLoading(false);
 				}
 			});
 	};
 
 	return (
 		<div className="page">
+			<AlertBar alertBarDisplay={showAlertBar} type={alertBarType} alertBarText={alertBarText} callback={setShowAlertBar}/>
 			<h1 className="title">Contact Us</h1>
 			<form id="contactForm" style={loading ? { opacity: 0.8, pointerEvents: 'none' } : {}}>
 				<Input

@@ -1,0 +1,17 @@
+.alertBar {
+	display: flex;
+	position: absolute;
+	top: 0%;
+	margin: 0 auto;
+	height: 50px;
+	min-width: 50vw;
+	border-radius: 0 0 20px 20px;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px;
+}
+
+.alertBarText {
+	max-width: 50vw;
+	white-space: wrap;
+}

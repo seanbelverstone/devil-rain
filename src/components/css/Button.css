@@ -12,6 +12,10 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
+.buttonText {
+	text-align: center;
+}
+
 .button:hover {
 	opacity: 0.8;
 	transform: scale(1.1);
