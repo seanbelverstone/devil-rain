@@ -1,22 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { LoadingIcon } from './LoadingIcon.js';
+import { isEmpty } from '../utils.js';
 import './css/Button.css';
 
 export const Button = props => {
-	const { id, callback, text, type, wrapperStyle, validFields, loading } = props;
+	const { id, className, callback, text, type, wrapperStyle, validFields, loading } = props;
 	const buttonDisabled = !(validFields.every(field => field === true));
 
 	const handleCallback = (e) => {
-		e.preventDefault();
-		console.log(!buttonDisabled);
-		!buttonDisabled && callback && callback(e);
+		if (!e?.key || e.key === 'Enter') {
+			e.preventDefault();
+			!buttonDisabled && callback && callback(e);
+		}
 	};
 
 	return (
 		<button
 			id={id}
-			className="button"
+			className={`button${!isEmpty(className) ? ` ${className}` : ''}`}
 			type={type}
 			onClick={handleCallback}
 			onKeyDown={handleCallback}
@@ -32,6 +34,7 @@ export const Button = props => {
 
 Button.propTypes = {
 	id: PropTypes.string,
+	className: PropTypes.string,
 	callback: PropTypes.func,
 	text: PropTypes.string,
 	type: PropTypes.string,
@@ -42,6 +45,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
 	id: '',
+	className: '',
 	callback: () => {},
 	text: '',
 	type: 'button',
