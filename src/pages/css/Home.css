@@ -24,3 +24,26 @@
 	position: absolute;
 	top: 45%;
 }
+
+@media (max-width: 720px) {
+	.homePage {
+		flex-direction: column;
+	}
+
+	#nameBackground {
+		position: relative;
+		top: unset;
+		gap: 0;
+	}
+
+	#bandName {
+		position: relative;
+		margin-top: -145px;
+	}
+}
+
+@media (max-width: 575px) {
+	#bandName {
+		margin-top: -125px;
+	}
+}

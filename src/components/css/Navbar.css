@@ -95,14 +95,14 @@
 }
 
 .hamburgerMenu {
-	width: 40vw;
+	width: 16em;
 	height: 100vh;
 	z-index: 10;
-	background-color: var(--tertiary);
+	background-color: var(--background-color);
 	margin-left: -20px;
 	top: 0;
 	box-shadow: 2px 2px 30px 5px var(--secondary);
-	opacity: 0.95;
+	opacity: 0.97;
 	position: absolute;
 }
 
@@ -130,5 +130,5 @@
 	text-decoration: none;
 	color: white;
 	border-radius: 0;
-	width: 34.25vw;
+	width: 13.7em;
 }
