@@ -18,7 +18,7 @@ function Navbar() {
 	}, [location.pathname]);
 
 	useEffect(() => {
-		setMobileView(windowSize.width < 675);
+		setMobileView(windowSize.width < 650);
 	}, [windowSize.width]);
 
 	const setHighlight = () => {

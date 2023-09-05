@@ -31,8 +31,8 @@ export function debounce(func, wait, immediate) {
 export function useWindowSize() {
 	function getSize() {
 		return {
-			width: window.innerWidth,
-			height: window.innerHeight,
+			width: window.outerWidth,
+			height: window.outerWidth,
 		};
 	}
   
