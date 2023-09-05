@@ -69,6 +69,8 @@
 .container {
 	display: inline-block;
 	cursor: pointer;
+	margin-left: 10px;
+	margin-top: 5px;
 }
   
 .bar1, .bar2, .bar3 {
@@ -90,4 +92,43 @@
   
 .change .bar3 {
 	transform: translate(0, -11px) rotate(45deg);
+}
+
+.hamburgerMenu {
+	width: 40vw;
+	height: 100vh;
+	z-index: 10;
+	background-color: var(--tertiary);
+	margin-left: -20px;
+	top: 0;
+	box-shadow: 2px 2px 30px 5px var(--secondary);
+	opacity: 0.95;
+	position: absolute;
+}
+
+.slideIn {
+	animation: slideIn 0.75s forwards ease-in-out;
+}
+
+.slideOut {
+	animation: slideOut 0.75s forwards ease-in-out;
+}
+
+#hamburgerNavLinkContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 2em;
+}
+
+#hamburgerNavLinkContainer .navlinks {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 0 1em;
+	text-decoration: none;
+	color: white;
+	border-radius: 0;
+	width: 34.25vw;
 }
