@@ -1,24 +1,25 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import facebookIcon from '../assets/facebookLogo.png';
 import bandLogo from '../assets/bandLogo.jpg';
 import bandName from '../assets/bandName.png';
 import './css/Navbar.css';
+import { useWindowSize } from '../utils';
 
 function Navbar() {
 	const [mobileView, setMobileView] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
 	const location = useLocation();
-	const screenWidth = document.documentElement.clientWidth;
+	const windowSize = useWindowSize();
 
 	useEffect(() => {
 		setHighlight();
 	}, [location.pathname]);
 
 	useEffect(() => {
-		setMobileView(screenWidth < 650);
-		console.log(screenWidth, mobileView);
-	}, []);
+		setMobileView(windowSize.width < 675);
+	}, [windowSize.width]);
 
 	const setHighlight = () => {
 		Array.from(document.getElementsByClassName('navicon')).forEach(item => item.classList.remove('active'));
