@@ -18,7 +18,7 @@ function Videos() {
 				const data = await fetch(`${baseUrl}${channelId}`).then(response => response.json());
 				const latestVideo = data.items.shift();
 				setLatestVideo(latestVideo);
-				setVideos(data.items);
+				setVideos(data.items.slice(0, 4));
 			} catch (error) {
 				setCallError(true);
 			}
@@ -34,6 +34,7 @@ function Videos() {
 					<div id="latestVideosSection">
 						{videos.map(video => <VideoCard key={video.guid} video={video} />)}
 					</div>
+					<p className="moreVideosText">Please visit <a href="https://www.youtube.com" target="_blank" rel="noreferrer">Devil Rain on YouTube</a> for more videos</p>
 				</div>
 			</div>
 		);
@@ -49,6 +50,7 @@ function Videos() {
 			<div className="page" style={{ flexDirection: 'column' }}>
 				<h1>No videos to display</h1>
 				<p>It looks like there was an issue getting the videos from YouTube. Please contact us via the <a href="/contact">Contact</a> page</p>
+				<p className="moreVideosText">Please visit <a href="https://www.youtube.com" target="_blank" rel="noreferrer">Devil Rain on YouTube</a> for more videos</p>
 			</div>
 		);
 	}
