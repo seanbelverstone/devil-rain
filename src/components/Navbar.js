@@ -71,7 +71,7 @@ function Navbar() {
 								onClick={() => setMenuOpen(!menuOpen)}
 								style={{
 									...(menuOpen ? {
-										transform: 'translateX(32vw)',
+										// transform: 'translateX(32vw)',
 										zIndex: 15
 									} : {}) }}
 							>
