@@ -132,3 +132,19 @@
 	border-radius: 0;
 	width: 13.7em;
 }
+
+@media (max-width: 1000px) {
+	.alertBar {
+		height: min-content !important;
+		padding: 2px !important;
+	}
+}
+
+@media (max-width: 787px) {
+	.alertBar {
+		width: 100%;
+	}
+	.alertBarText {
+		max-width: 100%;
+	}
+}
