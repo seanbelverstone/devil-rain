@@ -25,7 +25,6 @@ function About() {
 			name: 'Scott Biaggi',
 			role: 'Lead Guitar',
 			bio: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Leo vel fringilla est ullamcorper eget nulla. Adipiscing elit duis tristique sollicitudin.
-				Quis varius quam quisque id diam vel quam. Proin sagittis nisl rhoncus mattis rhoncus urna neque viverra.
 				Accumsan tortor posuere ac ut consequat semper viverra nam. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in. Non consectetur a erat nam at. Mattis nunc sed blandit libero volutpat sed cras ornare. Odio euismod lacinia at quis risus sed vulputate odio. Turpis egestas integer eget aliquet nibh. Eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Ornare massa eget egestas purus viverra accumsan.`,
 			image: scott
 		},
@@ -34,8 +33,7 @@ function About() {
 			role: 'Bass Guitar',
 			bio: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin aliquam ultrices sagittis orci a scelerisque. Cras pulvinar mattis nunc sed blandit libero volutpat sed cras.
 				Libero id faucibus nisl tincidunt eget.
-				Tellus integer feugiat scelerisque varius morbi enim nunc. Nunc non blandit massa enim nec dui nunc. Platea dictumst quisque sagittis purus sit amet. Magnis dis parturient montes nascetur ridiculus. Orci nulla pellentesque dignissim enim sit amet venenatis.
-				Fringilla urna porttitor rhoncus dolor purus non enim. Cursus euismod quis viverra nibh cras pulvinar mattis nunc sed. Turpis massa sed elementum tempus egestas sed. Tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula. Et tortor at risus viverra adipiscing at in. Eu scelerisque felis imperdiet proin fermentum leo vel orci porta. Cum sociis natoque penatibus et magnis dis parturient.`,
+				Tellus integer feugiat scelerisque varius morbi enim nunc. Nunc non blandit massa enim nec dui nunc. Platea dictumst quisque sagittis purus sit amet. Magnis dis parturient montes nascetur ridiculus. Orci nulla pellentesque dignissim enim sit amet venenatis.`,
 			image: charlie
 		},
 		{
