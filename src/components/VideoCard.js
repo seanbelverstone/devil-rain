@@ -17,7 +17,7 @@ export const VideoCard = props => {
 					width="600"
 					height="340"
 					src="https://www.youtube.com/embed?listType=user_uploads&list=WeHateMovies"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allow="accelerometer; autoplay=0; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 					allowFullScreen>
 				</iframe>
 				<p className="videoTitle">{title}</p>
