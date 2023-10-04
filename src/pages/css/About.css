@@ -43,6 +43,12 @@
 	padding: 10px;
 }
 
+.memberBioWrapper {
+	max-height: 20em;
+	overflow-y: auto;
+	margin-bottom: 1em;
+}
+
 .memberBio {
 	text-align: left;
 	padding: 5px;
