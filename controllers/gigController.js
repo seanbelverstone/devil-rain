@@ -5,8 +5,8 @@ const cheerio = require('cheerio');
 module.exports = {
   get: (request, response) => {
     db.Gig.findAll({}, 
-		).then(orders => {
-      response.json(orders);
+		).then(res => {
+      response.json(res);
     });
   },
 
@@ -46,38 +46,14 @@ module.exports = {
 	  	type: DataTypes.STRING // private/FREE
 		*/
 		db.Gig
-		.create(reqBody)
+		.create(reqBody);
 		// .then(newGig => response.json(newGig))
 		// .catch(err => response.status(422).json(err));
 		})
 	})
-
-
-  },
-
-  update: (request, response) => {
-    db.Gig
-      .findOne({where: {id: request.body.id}})
-      .then(
-        db.Gig.update({
-        completed: request.body.completed
-      }, { where: {
-        id: request.body.id
-      }}))
-      .then(updatedGig => {
-        response.json(updatedGig);
-      })
-  },
-
-  delete: (request, response) => {
-    const id = request.params.id
-    db.Gig
-      .destroy({
-        where: { id: id }
-      })
-      .then(deletedGig => {
-          response.json(deletedGig)
-      })
-      .catch(err => response.status(422).json(err));
+	db.Gig.findAll({}, 
+		).then(res => {
+      response.json(res);
+    });
   }
 };

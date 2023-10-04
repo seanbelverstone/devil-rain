@@ -56,10 +56,13 @@ function Navbar() {
 					</div>
 					<div id="navlinkContainer">
 						<NavLink className="navlinks" to="/">
-							<span className="material-symbols-outlined navicon" id="home" alt="home">home</span>
+							<span className="material-symbols-outlined navicon" id="home">home</span>
 						</NavLink>
 						<NavLink className="navlinks" to="/about">
-							<span className="material-symbols-outlined navicon" id="home" alt="home">info</span>
+							<span className="material-symbols-outlined navicon" id="about">info</span>
+						</NavLink>
+						<NavLink className="navlinks" to="/gigs">
+							<span className="material-symbols-outlined navicon" id="home">music_note</span>
 						</NavLink>
 						<NavLink className="navlinks" to="/videos">
 							<span className="material-symbols-outlined navicon" id="videos">movie</span>
@@ -98,12 +101,16 @@ function Navbar() {
 							</div>
 							<div id="hamburgerNavLinkContainer">
 								<NavLink className="navlinks" to="/">
-									<span className="material-symbols-outlined navicon" id="home" alt="home">home</span>
+									<span className="material-symbols-outlined navicon" id="home">home</span>
 									<h3>Home</h3>
 								</NavLink>
 								<NavLink className="navlinks" to="/about">
-									<span className="material-symbols-outlined navicon" id="home" alt="home">info</span>
+									<span className="material-symbols-outlined navicon" id="about">info</span>
 									<h3>About Us</h3>
+								</NavLink>
+								<NavLink className="navlinks" to="/gigs">
+									<span className="material-symbols-outlined navicon" id="gigs">music_note</span>
+									<h3>Gigs</h3>
 								</NavLink>
 								<NavLink className="navlinks" to="/videos">
 									<span className="material-symbols-outlined navicon" id="videos">movie</span>
