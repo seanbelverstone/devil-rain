@@ -5,6 +5,7 @@ import charlie from '../assets/charlie.jpg';
 import steve from '../assets/steve.jpg';
 import paul from '../assets/paul.jpg';
 import { Button } from '../components/Button';
+import { Scrollbars } from 'react-custom-scrollbars';
 import './css/About.css';
 
 function About() {
@@ -109,14 +110,20 @@ function About() {
 					<div
 						className="carouselItem"
 						key={member.name.toLowerCase().split(' ').join('')}
-						style={{ transform: `translate(-${currentIndex * 100}%)`}}
+						style={{ transform: `translate(-${currentIndex * 103.5}%)`}}
 					>
 						<img className="memberImage" src={member.image} />
 						<div className="carouselText">
 							<h2 className="memberName">{member.name}</h2>
 							<h3 className="memberRole">{member.role}</h3>
 							<div className="memberBioWrapper">
-								{member.bio.split('\n').map((line, index) => (<p key={`${member.name}${index}`} className="memberBio">{line}</p>))}
+								<Scrollbars
+									style={{ width: '100%', height: 300 }}
+									renderTrackVertical={props => <div {...props} className='track-vertical'></div>}
+									renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+								>
+									{member.bio.split('\n').map((line, index) => (<p key={`${member.name}${index}`} className="memberBio">{line}</p>))}
+								</Scrollbars>
 							</div>
 						</div>
 					</div>
