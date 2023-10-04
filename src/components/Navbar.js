@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import facebookIcon from '../assets/facebookLogo.png';
 import bandLogo from '../assets/bandLogo.jpg';
@@ -11,6 +11,7 @@ function Navbar() {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const location = useLocation();
 	const windowSize = useWindowSize();
+	const ref = useRef();
 
 	useEffect(() => {
 		setHighlight();
@@ -20,12 +21,27 @@ function Navbar() {
 		setMobileView(windowSize.width < 650);
 	}, [windowSize.width]);
 
+	useEffect(() => {
+		const checkIfClickedOutside = e => {
+			if (menuOpen && ref.current && !ref.current.contains(e.target)) {
+				setMenuOpen(false);
+			}
+		};
+		document.addEventListener('mousedown', checkIfClickedOutside);
+
+		return () => {
+			document.removeEventListener('mousedown', checkIfClickedOutside);
+		};
+	}, [menuOpen]);
+
 	const setHighlight = () => {
 		Array.from(document.getElementsByClassName('navicon')).forEach(item => item.classList.remove('active'));
 		const iconId = location.pathname === '/' ? 'home' : location.pathname.split('/')[1];
 		const icon = document.getElementById(iconId);
 		icon && icon.classList.add('active');
 	};
+
+	
 
 	return (
 		<div className="navbar" style={{ ...(mobileView ? { gap: 0 } : {})}}>
@@ -65,6 +81,7 @@ function Navbar() {
 						// Hamburger turns to X when menu is open
 						<div
 							className={`hamburgerMenu${menuOpen ? ' slideOut' : ' slideIn'}`}
+							ref={ref}
 						>
 							<div
 								className={`container${menuOpen ? ' change' : ''}`}
