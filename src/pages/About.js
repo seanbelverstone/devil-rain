@@ -116,15 +116,16 @@ function About() {
 						<div className="carouselText">
 							<h2 className="memberName">{member.name}</h2>
 							<h3 className="memberRole">{member.role}</h3>
-							<div className="memberBioWrapper">
-								<Scrollbars
-									style={{ width: '100%', height: 300 }}
-									renderTrackVertical={props => <div {...props} className='track-vertical'></div>}
-									renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-								>
+							<Scrollbars
+								style={{ width: '100%', height: 300 }}
+								renderTrackVertical={props => <div {...props} className='track-vertical'></div>}
+								renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+							>
+								<div className="memberBioWrapper">
 									{member.bio.split('\n').map((line, index) => (<p key={`${member.name}${index}`} className="memberBio">{line}</p>))}
-								</Scrollbars>
-							</div>
+								</div>
+
+							</Scrollbars>
 						</div>
 					</div>
 				))}
