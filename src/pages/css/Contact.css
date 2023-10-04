@@ -12,6 +12,6 @@
 
 @media (max-width: 450px) {
 	#contactForm {
-		margin-top: 2.5em;
+		margin: 0 5px;
 	}
 }
