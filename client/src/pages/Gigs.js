@@ -48,7 +48,11 @@ function Gigs() {
 				<h1 className="title">Upcoming Gigs</h1>
 				{gigList.map(gig => (
 					<div key={gig.position}>
-						
+						<img src={gig.img} />
+						<div>Date {gig.date}</div>
+						<div>Time {gig.time}</div>
+						<div>Where {gig.location}</div>
+						<div>{gig.description}</div>
 					</div>
 				))}
 			</div>
