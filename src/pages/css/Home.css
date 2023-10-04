@@ -14,7 +14,7 @@
 
 #nameBackground {
 	position: absolute;
-	top: 45%;
+	top: 65%;
 	background: white;
 	opacity: 0.85;
 	height: 8em;
@@ -23,7 +23,7 @@
 
 #bandName {
 	position: absolute;
-	top: 45%;
+	top: 65%;
 }
 
 @media (max-width: 950px) {
