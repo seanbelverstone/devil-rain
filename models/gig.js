@@ -1,6 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
 	
 	const Gig = sequelize.define("Gig", {
+	  position: DataTypes.INTEGER,
 	  date: DataTypes.STRING,
 	  time: DataTypes.STRING,
 	  location: DataTypes.STRING,
