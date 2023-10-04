@@ -8,6 +8,6 @@ module.exports = (sequelize, DataTypes) => {
 	  type: DataTypes.STRING // private/FREE
 	}, {});
   
-	Gig.sync();
+	Gig.sync({ force: true });
 	return Gig;
   };
