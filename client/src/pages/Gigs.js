@@ -11,15 +11,6 @@ function Gigs() {
 		getGigs();
 	}, []);
 
-	// function sortByPosition(a, b) {
-	// 	if (a.position < b.positon) {
-	// 		return -1;
-	// 	} else if (a.position > b.position) {
-	// 		return 1;
-	// 	}
-	// 	return 0;
-	// }
-
 	const clearGigs = () => {
 		return axios.delete('api/delete');
 	};
@@ -27,10 +18,10 @@ function Gigs() {
 	const getGigs = () => {
 		setLoading(true);
 		return axios.get('/api/scrape').then(res => {
-			// const sortedData = res.data.length > 0 && res.data.sort(sortByPosition);
-			// console.log(sortedData);
-			console.log(res);
-			setGigList(res.data);
+			const sortedData = res.data.length > 0 && res.data.sort(function(a, b) {
+				return a.position - b.position;
+			});
+			setGigList(sortedData);
 			setTimeout(() => {
 				setLoading(false);
 			}, 2000);
