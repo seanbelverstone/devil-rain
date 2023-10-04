@@ -7,16 +7,33 @@ function Gigs() {
 	const [loading, setLoading] = useState(true);
 	const [gigList, setGigList] = useState([]);
 	useEffect(() => {
+		clearGigs();
 		getGigs();
 	}, []);
+
+	// function sortByPosition(a, b) {
+	// 	if (a.position < b.positon) {
+	// 		return -1;
+	// 	} else if (a.position > b.position) {
+	// 		return 1;
+	// 	}
+	// 	return 0;
+	// }
+
+	const clearGigs = () => {
+		return axios.delete('api/delete');
+	};
 
 	const getGigs = () => {
 		setLoading(true);
 		return axios.get('/api/scrape').then(res => {
+			// const sortedData = res.data.length > 0 && res.data.sort(sortByPosition);
+			// console.log(sortedData);
+			console.log(res);
 			setGigList(res.data);
 			setTimeout(() => {
 				setLoading(false);
-			}, 3000);
+			}, 2000);
 		});
 	};
 	if (loading) {
@@ -39,7 +56,9 @@ function Gigs() {
 			<div className="page">
 				<h1 className="title">Upcoming Gigs</h1>
 				{gigList.map(gig => (
-					<div key={gig.position}>{gig.date}</div>
+					<div key={gig.position}>
+						
+					</div>
 				))}
 			</div>
 		);

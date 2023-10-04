@@ -46,14 +46,17 @@ module.exports = {
 	  	type: DataTypes.STRING // private/FREE
 		*/
 		db.Gig
-		.create(reqBody);
+		.create(reqBody)
 		// .then(newGig => response.json(newGig))
-		// .catch(err => response.status(422).json(err));
+		.catch();
 		})
 	})
 	db.Gig.findAll({}, 
 		).then(res => {
       response.json(res);
     });
+  },
+  delete: () => {
+	db.Gig.truncate();
   }
 };
