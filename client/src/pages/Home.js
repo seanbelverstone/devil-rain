@@ -7,9 +7,9 @@ import './css/Home.css';
 function Home() {
 
 	const getArticles = () => {
-		return axios.get('/all');
+		return axios.get('/api/scrape').then(res => console.log(res));
 	};
-	console.log(getArticles());
+	getArticles();
 	return (
 		<div className="homePage">
 			<img src={imageOne} id="heroImage" alt=""/>
