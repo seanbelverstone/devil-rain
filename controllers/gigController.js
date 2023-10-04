@@ -28,6 +28,7 @@ module.exports = {
 			const splitLocation = location.split('\n')[0].split('at ')[1];
 			const description = $(element).find('.subit').find('.ipe').text();
 			const type = $(element).find(".subit").find('.tabgi').find('.tabgi-fee').text();
+			const img = $(element).find('.imgfit').find("img").attr("src")
 
 			reqBody = {
 				position: i,
@@ -35,7 +36,8 @@ module.exports = {
 				time,
 				location: splitLocation,
 				description,
-				type
+				type,
+				img: `https://www.lemonrock.com/${img}`
 			}
 
 		/*

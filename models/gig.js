@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
 	  time: DataTypes.STRING,
 	  location: DataTypes.STRING,
 	  description: DataTypes.STRING,
-	  type: DataTypes.STRING // private/FREE
+	  type: DataTypes.STRING, // private/FREE
+	  img: DataTypes.STRING
 	}, {});
   
 	Gig.sync({ force: true });
