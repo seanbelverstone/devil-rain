@@ -112,3 +112,21 @@ body {
 	}
 	
 }
+
+@keyframes slideIn {
+	0% {
+		transform: translateX(0)
+	}
+	100% {
+		transform: translateX(-50vw)
+	}
+}
+
+@keyframes slideOut {
+	0% {
+		transform: translateX(-50vw)
+	}
+	100% {
+		transform: translateX(0)
+	}
+}

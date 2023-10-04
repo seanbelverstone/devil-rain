@@ -2,13 +2,14 @@
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;
-	/* margin: 1em; */
+	overflow-x: hidden;
 	gap: 20px;
 }
 
-#imageOne {
+#heroImage {
 	border-radius: 5px;
 	width: 100%;
+	overflow-x: hidden;
 }
 
 #nameBackground {
@@ -23,4 +24,39 @@
 #bandName {
 	position: absolute;
 	top: 45%;
+}
+
+@media (max-width: 950px) {
+	#heroImage {
+		position: relative;
+		min-width: 150%;
+		align-self: center;
+	}
+}
+
+@media (max-width: 720px) {
+	.homePage {
+		flex-direction: column;
+	}
+
+	#nameBackground {
+		position: relative;
+		top: unset;
+		gap: 0;
+	}
+
+	#bandName {
+		position: relative;
+		margin-top: -145px;
+	}
+}
+
+@media (max-width: 575px) {
+	#bandName {
+		margin-top: -125px;
+	}
+
+	#nameBackground {
+		height: 7em;
+	}
 }

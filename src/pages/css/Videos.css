@@ -30,3 +30,31 @@
 .moreVideosText {
 	text-align: center;
 }
+
+@media (max-width: 1011px) {
+	.title {
+		margin-bottom: 1em;
+	}
+}
+
+@media (max-width: 650px) {
+	#latestVideo {
+		width: 400px;
+	}
+}
+
+@media (max-width: 420px) {
+	#latestVideoWrapper {
+		margin-bottom: 10px;
+	}
+	#latestVideo {
+		width: 300px;
+	}
+	.videoItem {
+		max-width: 100%;
+		border-radius: 0;
+	}
+	.videoImage a img {
+		width: 250px;
+	}
+}
