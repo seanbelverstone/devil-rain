@@ -9,7 +9,6 @@ module.exports = {
       response.json(res);
     });
   },
-
   create: async (request, response) => {
 	let reqBody;
 	await axios.get("https://www.lemonrock.com/devilrain?page=gigs").then(function(res) {
@@ -44,13 +43,7 @@ module.exports = {
 		// .then(newGig => response.json(newGig))
 		.catch();
 		})
-	}).then(() => {
-		db.Gig.findAll({}, 
-			).then(res => {
-			response.json(res);
-		});	
 	})
-
   },
   delete: () => {
 	db.Gig.truncate();

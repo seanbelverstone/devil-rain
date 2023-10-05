@@ -14,14 +14,21 @@ function Gigs() {
 		return axios.delete('api/delete');
 	};
 
+	const setGigs = () => {
+		return axios.get('api/scrape');
+	};
+
 	useEffect(() => {
 		clearGigs();
-		getGigs();
+		setGigs();
+		setTimeout(() => {
+			getGigs();
+		}, 3000);
 	}, []);
 
 	const getGigs = async () => {
 		setLoading(true);
-		const res = await axios.get('/api/scrape');
+		const res = await axios.get('/api/all');
 		const sortedData = res.data.length > 0 ? res.data.sort(function(a, b) {
 			return a.position - b.position;
 		}) : [];
