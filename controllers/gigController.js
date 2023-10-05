@@ -44,11 +44,13 @@ module.exports = {
 		// .then(newGig => response.json(newGig))
 		.catch();
 		})
+	}).then(() => {
+		db.Gig.findAll({}, 
+			).then(res => {
+			response.json(res);
+		});	
 	})
-	db.Gig.findAll({}, 
-		).then(res => {
-      response.json(res);
-    });
+
   },
   delete: () => {
 	db.Gig.truncate();

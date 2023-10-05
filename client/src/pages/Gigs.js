@@ -9,30 +9,27 @@ function Gigs() {
 	const [loading, setLoading] = useState(true);
 	const [gigList, setGigList] = useState([]);
 	const [scrollPosition, setScrollPosition] = useState(0);
-
-	useEffect(() => {
-		clearGigs();
-		setTimeout(() => {
-			getGigs();
-		}, 3000);
-	}, []);
-
+	
 	const clearGigs = () => {
 		return axios.delete('api/delete');
 	};
 
-	const getGigs = () => {
+	useEffect(() => {
+		clearGigs();
+		getGigs();
+	}, []);
+
+	const getGigs = async () => {
 		setLoading(true);
-		return axios.get('/api/scrape').then(res => {
-			const sortedData = res.data.length > 0 ? res.data.sort(function(a, b) {
-				return a.position - b.position;
-			}) : [];
-			console.log(res, sortedData);
-			setGigList(sortedData);
-			setTimeout(() => {
-				setLoading(false);
-			}, 2000);
-		});
+		const res = await axios.get('/api/scrape');
+		const sortedData = res.data.length > 0 ? res.data.sort(function(a, b) {
+			return a.position - b.position;
+		}) : [];
+		console.log(res, sortedData);
+		setGigList(sortedData);
+		setTimeout(() => {
+			setLoading(false);
+		}, 2000);
 	};
 	if (loading) {
 		return (
