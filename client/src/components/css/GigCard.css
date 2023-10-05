@@ -48,6 +48,18 @@
 	color: var(--accent);
 }
 
+a.location0 {
+	color: white;
+}
+
+a.location0:hover {
+	color: var(--accent);
+}
+
+a.location0:active {
+	opacity: 0.5;
+}
+
 .gigImage {
 	margin-top: 1em;
 }
@@ -57,4 +69,10 @@
 	margin: 1em 0;
 	min-width: 20em;
 	max-width: 20em;
+}
+
+.type {
+	position: absolute;
+	bottom: 2%;
+	font-weight: bold;
 }
