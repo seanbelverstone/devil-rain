@@ -4,6 +4,7 @@ import { LoadingIcon } from '../components/LoadingIcon';
 import { GigCard } from '../components/GigCard';
 import './css/Gigs.css';
 import Scrollbars from 'react-custom-scrollbars';
+import { isEmpty } from 'rxjs';
 
 function Gigs() {
 	const [loading, setLoading] = useState(true);
@@ -13,10 +14,6 @@ function Gigs() {
 	useEffect(() => {
 		clearGigs();
 		getGigs();
-	}, []);
-
-	useEffect(() => {
-		console.log(scrollPosition);
 	}, []);
 
 	const clearGigs = () => {
@@ -43,7 +40,7 @@ function Gigs() {
 			</div>
 		);
 	}
-	if (!loading && gigList.length === 0) {
+	if (!loading && isEmpty(gigList.length)) {
 		return (
 			<div className="page">
 				<h1 className="title">Upcoming Gigs</h1>
