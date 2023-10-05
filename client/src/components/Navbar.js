@@ -18,7 +18,7 @@ function Navbar() {
 	}, [location.pathname]);
 
 	useEffect(() => {
-		setMobileView(windowSize.width < 650);
+		setMobileView(windowSize.width < 702);
 	}, [windowSize.width]);
 
 	useEffect(() => {

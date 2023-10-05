@@ -6,4 +6,6 @@ module.exports = function(app) {
 		.get(gigController.get);
 	app.route("/api/scrape/")
 		.get(gigController.create);
+	app.route('/api/delete')
+		.delete(gigController.delete);
 }
