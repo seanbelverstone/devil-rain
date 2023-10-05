@@ -14,7 +14,7 @@ function Gigs() {
 		clearGigs();
 		setTimeout(() => {
 			getGigs();
-		}, 10000);
+		}, 3000);
 	}, []);
 
 	const clearGigs = () => {
@@ -27,7 +27,7 @@ function Gigs() {
 			const sortedData = res.data.length > 0 ? res.data.sort(function(a, b) {
 				return a.position - b.position;
 			}) : [];
-			console.log(res.data, sortedData);
+			console.log(res, sortedData);
 			setGigList(sortedData);
 			setTimeout(() => {
 				setLoading(false);
