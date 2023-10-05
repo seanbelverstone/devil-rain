@@ -61,7 +61,7 @@ function Gigs() {
 					onScrollFrame={(values) => setScrollPosition(values.left)}
 				>
 					<div className="gigListWrapper">
-						{gigList.map(gig => (<GigCard key={gig.position} gig={gig} />))}
+						{gigList?.length > 0 && gigList?.map(gig => (<GigCard key={gig.position} gig={gig} />))}
 						<div id="whitespace"></div>
 					</div>
 				</Scrollbars>
