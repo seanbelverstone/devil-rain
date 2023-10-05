@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './css/Home.css';
 import { LoadingIcon } from '../components/LoadingIcon';
 import { GigCard } from '../components/GigCard';
+import './css/Gigs.css';
+import Scrollbars from 'react-custom-scrollbars';
 
 function Gigs() {
 	const [loading, setLoading] = useState(true);
 	const [gigList, setGigList] = useState([]);
+	const [scrollPosition, setScrollPosition] = useState(0);
+
 	useEffect(() => {
 		clearGigs();
 		getGigs();
+	}, []);
+
+	useEffect(() => {
+		console.log(scrollPosition);
 	}, []);
 
 	const clearGigs = () => {
@@ -47,8 +54,19 @@ function Gigs() {
 		return (
 			<div className="page">
 				<h1 className="title">Upcoming Gigs</h1>
-				{gigList.map(gig => (<GigCard key={gig.position} gig={gig} />
-				))}
+				<Scrollbars
+					style={{ width: '100%', height: 500 }}
+					renderTrackHorizontal={props => <div {...props} className='track-horizontal'></div>}
+					renderThumbHorizontal={props => <div {...props} className="thumb-horizontal"/>}
+					onScrollFrame={(values) => setScrollPosition(values.left)}
+				>
+					<div className="gigListWrapper">
+						{gigList.map(gig => (<GigCard key={gig.position} gig={gig} />))}
+						<div id="whitespace"></div>
+					</div>
+				</Scrollbars>
+				<div id="leftFade" style={{ opacity: scrollPosition }}/>
+				<div id="rightFade" style={{ opacity: 1 - scrollPosition }}/>
 			</div>
 		);
 	}

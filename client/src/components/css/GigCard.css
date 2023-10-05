@@ -69,10 +69,33 @@ a.location0:active {
 	margin: 1em 0;
 	min-width: 20em;
 	max-width: 20em;
+	overflow-y: auto;
 }
 
 .type {
 	position: absolute;
 	bottom: 2%;
 	font-weight: bold;
+}
+
+@media (max-width: 700px) {
+	.gigCard {
+		max-width: 20em;
+		font-size: 0.9rem;
+		min-height: 28em
+	}
+	.description {
+		min-width: 18em;
+	}
+}
+
+@media (max-width: 450px) {
+	.gigCard {
+		max-width: 17.5em;
+		font-size: 0.9rem;
+		min-height: 30em
+	}
+	.description {
+		min-width: 15em;
+	}
 }

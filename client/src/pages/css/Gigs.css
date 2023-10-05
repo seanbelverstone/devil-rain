@@ -1,0 +1,81 @@
+.gigListWrapper {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin: 0 5em;
+}
+
+.track-horizontal {
+	background-color: white;
+	width: 100%;
+	left: 0px;
+	bottom: 0px;
+	height: 10px !important;
+}
+
+.thumb-horizontal {
+	background-color: var(--accent);
+	border-radius: 3px;
+}
+
+#whitespace {
+	min-width: 5em;
+	background-color: white;
+	min-height: 5em;
+}
+
+#rightFade, #leftFade {
+	height: 35em;
+	width: 20em;
+	position: absolute;
+	right: 0;
+	background-image: linear-gradient(to right, rgba(255,0,0,0), white);
+	pointer-events: none;
+}
+
+#leftFade {
+	left: 0 !important;
+	background-image: linear-gradient(to left, rgba(255,0,0,0), white) !important;
+}
+
+@media (max-width: 1550px) {
+	#rightFade, #leftFade {
+		width: 10em;
+	}
+}
+
+@media (max-width: 1000px) {
+	.gigListWrapper {
+		margin: 0 2em;
+	}
+	#whitespace {
+		min-width: 2em;
+	}
+	#rightFade, #leftFade {
+		width: 5em;
+	}
+}
+
+@media (max-width: 700px) {
+	.gigListWrapper {
+		margin: 0 1em;
+	}
+	#whitespace {
+		min-width: 1em;
+	}
+	#rightFade, #leftFade {
+		width: 3em;
+	}
+}
+
+@media (max-width: 450px) {
+	.gigListWrapper {
+		margin: 0 0.5em;
+	}
+	#whitespace {
+		min-width: 0.5em;
+	}
+	#rightFade, #leftFade {
+		width: 1em;
+	}
+}
