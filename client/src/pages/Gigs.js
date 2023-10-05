@@ -40,7 +40,7 @@ function Gigs() {
 			</div>
 		);
 	}
-	if (!loading && isEmpty(gigList.length)) {
+	if (!loading && isEmpty(gigList)) {
 		return (
 			<div className="page">
 				<h1 className="title">Upcoming Gigs</h1>
