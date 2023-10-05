@@ -8,7 +8,7 @@ function Videos() {
 	const [latestVideo, setLatestVideo] = useState({});
 	const [videos, setVideos] = useState([]);
 	const [callError, setCallError] = useState(false);
-	const channelId = 'UCEQm0gqdGq7NfPQBVFOYipg';
+	const channelId = 'UCaaIwZ6aoTSxOGQdtdxCuoA';
 
 	const baseUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3D';
 
@@ -34,7 +34,7 @@ function Videos() {
 					<div id="latestVideosSection">
 						{videos.map(video => <VideoCard key={video.guid} video={video} />)}
 					</div>
-					<p className="moreVideosText">Please visit <a href="https://www.youtube.com" target="_blank" rel="noreferrer">Devil Rain on YouTube</a> for more videos</p>
+					<p className="moreVideosText">Please visit <a href="https://www.youtube.com/@pambelverstone6321/videos" target="_blank" rel="noreferrer">Devil Rain on YouTube</a> for more videos</p>
 				</div>
 			</div>
 		);
