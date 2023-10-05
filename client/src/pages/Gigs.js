@@ -24,9 +24,10 @@ function Gigs() {
 	const getGigs = () => {
 		setLoading(true);
 		return axios.get('/api/scrape').then(res => {
-			const sortedData = res.data.length > 0 && res.data.sort(function(a, b) {
+			const sortedData = res.data.length > 0 ? res.data.sort(function(a, b) {
 				return a.position - b.position;
-			});
+			}) : [];
+			console.log(res.data, sortedData);
 			setGigList(sortedData);
 			setTimeout(() => {
 				setLoading(false);

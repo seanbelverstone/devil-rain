@@ -39,12 +39,6 @@ module.exports = {
 				type,
 				img: `https://www.lemonrock.com/${img}`
 			}
-
-		/*
-		location: DataTypes.STRING,
-	  	description: DataTypes.STRING,
-	  	type: DataTypes.STRING // private/FREE
-		*/
 		db.Gig
 		.create(reqBody)
 		// .then(newGig => response.json(newGig))
