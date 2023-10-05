@@ -1,6 +1,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import defaultImage from '../assets/defaultImage.jpg';
 import './css/GigCard.css';
 
 export const GigCard = props => {
@@ -9,19 +10,17 @@ export const GigCard = props => {
 
 	return (
 		<div className="gigCard">
-			<div className="firstBlock">
-				<div className="dateWrapper">
-					{date.split(' ').map((d, i) => (
-						<div key={`${d}_${i}`} className={`date${i}`}>{d}</div>
-					))}
-				</div>
-				<img src={img} />
-				<div>{time}</div>
+			<div className="dateWrapper">
+				{date.split(' ').map((d, i) => (
+					<div key={`${d}_${i}`} className={`date${i}`}>{d}</div>
+				))}
 			</div>
-			<div className="secondBlock">
-				<div>Where {location}</div>
-				<span className="description">{description}</span>
-			</div>
+			<div className="gigTime">{time}</div>
+			{location.split(',').map((loc, i) => (
+				<span key={`${loc}_${i}`} className={`location${i}`}>{loc}{i === 0 ? ', ' : ''}</span>
+			))}
+			<img src={img === 'https://www.lemonrock.com/gx/1x1ph.png' ? defaultImage : img} />
+			<span className="description">{description}</span>
 		</div>
 	);
 };

@@ -1,14 +1,38 @@
 .gigCard {
+	background-color: var(--background-color);
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 5px;
+	margin-bottom: 20px;
+	box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
+	color: white;
+	border-radius: 20px;
+	min-height: 23em;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin: 1em;
 }
 
 .dateWrapper {
 	display: flex;
-	gap: 5px
+	gap: 5px;
+	justify-content: center;
+	left: 5%;
 }
 
-.date0, .date1, .date2 {
+.gigTime {
+	right: 5%;
+}
+
+.dateWrapper, .gigTime {
+	position: absolute;
+	top: 2%;
+}
+
+.date0, .date1, .date2, .location0, .location1 {
 	font-weight: bold;
 }
 
@@ -16,6 +40,11 @@
 	color: var(--accent);
 }
 
-.secondBlock {
-	max-width: 30em;
+.location1 {
+	color: var(--accent);
+}
+
+.description {
+	min-width: 20em;
+	max-width: 20em;
 }
