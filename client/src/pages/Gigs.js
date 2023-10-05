@@ -14,7 +14,7 @@ function Gigs() {
 		clearGigs();
 		setTimeout(() => {
 			getGigs();
-		}, 3000);
+		}, 10000);
 	}, []);
 
 	const clearGigs = () => {
