@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './css/Home.css';
 import { LoadingIcon } from '../components/LoadingIcon';
+import { GigCard } from '../components/GigCard';
 
 function Gigs() {
 	const [loading, setLoading] = useState(true);
@@ -46,14 +47,7 @@ function Gigs() {
 		return (
 			<div className="page">
 				<h1 className="title">Upcoming Gigs</h1>
-				{gigList.map(gig => (
-					<div key={gig.position}>
-						<img src={gig.img} />
-						<div>Date {gig.date}</div>
-						<div>Time {gig.time}</div>
-						<div>Where {gig.location}</div>
-						<div>{gig.description}</div>
-					</div>
+				{gigList.map(gig => (<GigCard key={gig.position} gig={gig} />
 				))}
 			</div>
 		);
