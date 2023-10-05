@@ -2,15 +2,13 @@
 	background-color: var(--background-color);
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	text-align: center;
 	padding: 5px;
 	margin-bottom: 20px;
 	box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
 	color: white;
 	border-radius: 20px;
-	min-height: 23em;
-	justify-content: center;
+	min-height: 26em;
 	align-items: center;
 	position: relative;
 	margin: 1em;
@@ -40,11 +38,23 @@
 	color: var(--accent);
 }
 
+.locationWrapper {
+	display: flex;
+	flex-direction: column;
+	margin-top: 2em;
+}
+
 .location1 {
 	color: var(--accent);
 }
 
+.gigImage {
+	margin-top: 1em;
+}
+
+
 .description {
+	margin: 1em 0;
 	min-width: 20em;
 	max-width: 20em;
 }
