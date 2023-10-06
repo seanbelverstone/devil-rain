@@ -24,8 +24,8 @@
 	flex-direction: row;
 	background-color: var(--background-color);
 	color: white;
-	min-width: 98%;
-	margin: 5em 1em;
+	min-width: 100%;
+	margin: 5em 0;
 	transition: 0.5s ease-in-out;
 	border-radius: 20px;
 	box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
@@ -114,8 +114,14 @@
 		position: relative;
 	}
 
+	.carouselItem {
+		margin: 2em 0;
+	}
+
+
 	.memberImage {
 		max-width: 15em;
+		margin: 4em 1em 1em 1em;
 	}
 
 	.memberBio {
@@ -134,7 +140,7 @@
 	}
 
 	.carouselText {
-		margin-top: 2em;
+		margin-top: 4em;
 	}
 
 	#leftArrow, #rightArrow {
@@ -169,6 +175,7 @@
 
 	.carouselItem {
 		flex-direction: column;
+		margin: 2em 0;
 	}
 
 	.memberName, .memberRole {
@@ -177,6 +184,10 @@
 		top: 0;
 		right: 0;
 		left: 0;
+	}
+
+	.memberRole {
+		margin-bottom: 1em;
 	}
 
 	.carouselText {
