@@ -84,9 +84,8 @@ function About() {
 			image: steve
 		},
 		{
-			name: 'Paul',
+			name: 'Paul Kingston',
 			role: 'Drums',
-			// eslint-disable-next-line quotes
 			bio: `Hello I'm Paul! I've been in Devil Rain playing the drums since 2019!
 				Prior to being in the band I hadn't played in a band or played the drums for around 10 years. Really wanted to get back into it and luckily enough for me Devil Rain were on the look out for a drummer!
 				It's always a pleasure playing music with these awesome people. I feel very lucky to be in this band and appreciate every time I get to sit behind the drum kit and play. I never take it for granted and enjoy every second of it! I do my best to serve the song and put my own little twists on things whilst trying to keep everyone in time!`,
