@@ -16,7 +16,7 @@ export const VideoCard = props => {
 					id="latestVideo"
 					width="600"
 					height="340"
-					src="https://www.youtube.com/embed/videoseries?list=UUaaIwZ6aoTSxOGQdtdxCuoA&index=1"
+					src={`https://www.youtube.com/embed/${video.guid.split(':')[2]}`}
 					allow="accelerometer; autoplay=0; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 					allowFullScreen>
 				</iframe>

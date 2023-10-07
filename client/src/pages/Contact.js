@@ -39,7 +39,7 @@ function Contact() {
 			message: message.value
 		};
 		setLoading(true);
-		emailjs.send('service_o7pljfm', 'template_qt4stmb', data, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
+		emailjs.send('service_mdvlxz8', 'template_qt4stmb', data, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
 			.then((res) => {
 				if (res.status === 200) {
 					setTimeout(() => {
