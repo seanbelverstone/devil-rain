@@ -40,9 +40,9 @@ function Gigs() {
 	};
 	if (loading) {
 		return (
-			<div className="page">
+			<div className="page" >
 				<h1 className="title">Upcoming Gigs</h1>
-				<LoadingIcon />
+				<LoadingIcon style={{ marginBottom: '2em' }}/>
 			</div>
 		);
 	}
