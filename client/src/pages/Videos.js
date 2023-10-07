@@ -16,6 +16,7 @@ function Videos() {
 		(async () => {
 			try {
 				const data = await fetch(`${baseUrl}${channelId}`).then(response => response.json());
+				console.log(await fetch(`${baseUrl}${channelId}`).then(response => response.json()));
 				const latestVideo = data.items.shift();
 				setLatestVideo(latestVideo);
 				setVideos(data.items.slice(0, 4));
