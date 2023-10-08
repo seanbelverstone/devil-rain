@@ -67,9 +67,14 @@ function About() {
 		{
 			name: 'Charlie Dixon',
 			role: 'Bass Guitar',
-			bio: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin aliquam ultrices sagittis orci a scelerisque. Cras pulvinar mattis nunc sed blandit libero volutpat sed cras.
-				Libero id faucibus nisl tincidunt eget.
-				Tellus integer feugiat scelerisque varius morbi enim nunc. Nunc non blandit massa enim nec dui nunc. Platea dictumst quisque sagittis purus sit amet. Magnis dis parturient montes nascetur ridiculus. Orci nulla pellentesque dignissim enim sit amet venenatis.`,
+			bio:  `Musically, whilst still a younger, I loved & loved playing in brass bands! I hit 14yrs & inspired by mates , I got into the guitar, rock & roll, & a social life!!! With these good friends, we taught each other, we wrote songs, got a gig before we were a band, formed the band & gigged two weeks later! & so we realized, if you've got the guts, you can gig!
+			I'm influenced by anything that affects me, happy, sad,  thoughtful, thoughtless, angry, peaceful, & most of all I just want to move, music can keep you moving!
+			I've been in some bands, here are three;
+			- Fools Of Nature - teenage moody originals
+			- The Brighton Agitators - ska big band
+			- Tragic Roundabout - all messed up & my wonder years!
+			At toddler group, Scott Biaggi asked if I would have a go playing bass guitar in a covers band, hmmmm, I gave it a go, 'twas alright! I really enjoy playing with Scott, it's easy, we both make mistakes, usually it's only us who knows it, & we do make some good noises! We've played with Pam for a good while now, Pam makes mistakes, & makes some really good noises! Paul & Steve make many noises, all good!!!! Alex is a songbird!
+			Never aimed for a covers band, however, playing with this bunch is absolute fun, lots of laughter, many dance moves, a joy!`,
 			image: charlie
 		},
 		{
