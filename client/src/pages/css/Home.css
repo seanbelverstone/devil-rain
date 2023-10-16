@@ -10,11 +10,13 @@
 	border-radius: 5px;
 	width: 100%;
 	overflow-x: hidden;
+	height: fit-content;
+	overflow-y: hidden;
 }
 
 #nameBackground {
 	position: absolute;
-	top: 65%;
+	top: 80%;
 	background: white;
 	opacity: 0.85;
 	height: 8em;
@@ -23,20 +25,14 @@
 
 #bandName {
 	position: absolute;
-	top: 65%;
+	top: 80%;
 }
 
-@media (max-width: 950px) {
-	#heroImage {
-		position: relative;
-		min-width: 150%;
-		align-self: center;
-	}
-}
 
-@media (max-width: 720px) {
+@media (max-width: 920px) {
 	.homePage {
 		flex-direction: column;
+		align-items: center;
 	}
 
 	#nameBackground {
@@ -48,6 +44,13 @@
 	#bandName {
 		position: relative;
 		margin-top: -145px;
+		max-width: fit-content;
+	}
+}
+
+@media (max-width: 730px) {
+	#bandName {
+		max-width: 80vw;
 	}
 }
 
