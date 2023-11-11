@@ -27,7 +27,8 @@ module.exports = {
 			const splitLocation = location.split('\n')[0].split('at ')[1];
 			const description = $(element).find('.subit').find('.ipe').text();
 			const type = $(element).find(".subit").find('.tabgi').find('.tabgi-fee').text();
-			const img = $(element).find('.imgfit').find("img").attr("src")
+			const img = $(element).find('.imgfit').find("img").attr("data-src")
+			const backupImg = $(element).find('.imgfit').find("img").attr("src");
 
 			reqBody = {
 				position: i,
@@ -36,7 +37,7 @@ module.exports = {
 				location: splitLocation,
 				description,
 				type,
-				img: `https://www.lemonrock.com/${img}`
+				img: `https://www.lemonrock.com/${img ? img : backupImg}`
 			}
 		db.Gig
 		.create(reqBody)
