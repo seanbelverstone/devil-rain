@@ -29,8 +29,8 @@ function Gigs() {
 	const getGigs = async () => {
 		setLoading(true);
 		const res = await axios.get('/api/all');
-		const sortedData = res.data.length > 0 ? res.data.sort(function(a, b) {
-			return a.position - b.position;
+		const sortedData = res?.data?.length > 0 ? res?.data?.sort(function(a, b) {
+			return a?.position - b?.position;
 		}) : [];
 		console.log(res, sortedData);
 		setGigList(sortedData);
