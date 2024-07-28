@@ -1,65 +1,87 @@
 .homePage {
 	display: flex;
+	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: center;
-	overflow-x: hidden;
+	overflow: hidden;
 	gap: 20px;
+	min-height: 100%;
 }
 
 #heroImage {
 	border-radius: 5px;
 	width: 100%;
-	overflow-x: hidden;
 	height: fit-content;
-	overflow-y: hidden;
 }
 
-#nameBackground {
-	position: absolute;
-	top: 80%;
-	background: white;
-	opacity: 0.85;
-	height: 8em;
+#bandNameSection {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+	margin-top: -10%;
+}
+
+.bandNameBackground, #bandName {
+  display: block;
+  height: 100%;
+}
+
+#logoSection {
 	width: 100%;
+	display: none;
+	height: auto;
+	justify-content: center;
 }
 
-#bandName {
-	position: absolute;
-	top: 80%;
+.homePageLogo {
+	display: none;
+	width: 10%;
 }
 
+@media (max-width: 1500px) {
+	#bandNameSection {
+		margin-top: -10%;
+	}
+}
+
+@media (max-width: 1200px) {
+	#bandNameSection {
+		margin-top: -5%;
+	}
+}
 
 @media (max-width: 920px) {
 	.homePage {
 		flex-direction: column;
 		align-items: center;
 	}
-
-	#nameBackground {
-		position: relative;
-		top: unset;
-		gap: 0;
+	#bandNameSection {
+		margin-top: -10%;
+		transform: scale(0.5);
 	}
-
-	#bandName {
-		position: relative;
-		margin-top: -145px;
-		max-width: fit-content;
+	#logoSection, .homePageLogo {
+		display: flex;
 	}
 }
 
 @media (max-width: 730px) {
-	#bandName {
-		max-width: 80vw;
-	}
+
 }
 
 @media (max-width: 575px) {
-	#bandName {
-		margin-top: -125px;
+	#bandNameSection {
+		transform: scale(0.4);
 	}
 
-	#nameBackground {
-		height: 7em;
+	.homePageLogo {
+		width: 25%;
+	}
+}
+
+@media (max-width: 400px) {
+	.homePageLogo {
+		width: 50%;
 	}
 }
