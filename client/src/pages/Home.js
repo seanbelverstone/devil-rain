@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import imageOne from '../assets/imageOne.jpg';
 import bandName from '../assets/bandNameEdit.png';
 import bandNameBackground from '../assets/bandNameBackground.png';
@@ -6,16 +6,6 @@ import bandLogo from '../assets/bandLogo.jpg';
 import './css/Home.css';
 
 function Home() {
-	const [screenWidth, setScreenWidth] = useState(0);
-
-	useEffect(() => {
-		console.log(screenWidth);
-		const handleResize = () => {
-			setScreenWidth(window.innerWidth);
-		};
-		window.addEventListener('resize', handleResize);
-	});
-
 	return (
 		<div className="homePage">
 			<img src={imageOne} id="heroImage" alt=""/>
