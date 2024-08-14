@@ -4,6 +4,7 @@ import scott from '../assets/scott.jpg';
 import charlie from '../assets/charlie.jpg';
 import steve from '../assets/steve.jpg';
 import paul from '../assets/paul.jpg';
+import alex from '../assets/alex.jpg';
 import { Button } from '../components/Button';
 import { Scrollbars } from 'react-custom-scrollbars';
 import './css/About.css';
@@ -95,6 +96,14 @@ function About() {
 				Prior to being in the band I hadn't played in a band or played the drums for around 10 years. Really wanted to get back into it and luckily enough for me Devil Rain were on the look out for a drummer!
 				It's always a pleasure playing music with these awesome people. I feel very lucky to be in this band and appreciate every time I get to sit behind the drum kit and play. I never take it for granted and enjoy every second of it! I do my best to serve the song and put my own little twists on things whilst trying to keep everyone in time!`,
 			image: paul
+		},
+		{
+			name: 'Alex Belverstone',
+			role: 'Vocals',
+			bio: `Having always grown up around an eclectic mix of music and having learnt trumpet and double bass back in school I had always wanted to be involved in music but as with all things, life got in the way and it took a backseat. Then in 2023 me and my dad performed a couple of songs at a birthday party and the band very kindly asked if I wanted to come along to a few rehearsals and see if it was something of interest. Well the rest is history as they say and I have loved every minute of it.
+				All of the band are such talented musicians and I feel truly grateful for them allowing me to share in this unique experience. Scott is the real deal shredding his guitar with the true rock gods, Pam is the vocal superstar hitting notes with ease who drives this whole thing forward, Steve still blows my mind with his incredible variety that he brings with his keyboard (plus his taste in music), Paul is an incredible drummer who brings the raw energy and beat that we thrive off of and Charlie with his superb bass lines and amazing harmonies brings such a fun and fantastic energy to every gig that I feel humbled to be around this inspiring group of people.
+				So if you want to see a band that truly loves what they do get in contact and I promise you won't be disappointed.`,
+			image: alex
 		}
 	];
 
@@ -108,33 +117,38 @@ function About() {
 	return (
 		<div className="page">
 			<h1 className="title">About Us</h1>
-			<Button id="leftArrow" className="navigationButton" text="<" wrapperStyle={{ fontSize: '2em' }} callback={() => handleNav('back')}/>
-			<div className="carouselContainer">
-				{bandMembers.map(member => (
-					<div
-						className="carouselItem"
-						key={member.name.toLowerCase().split(' ').join('')}
-						style={{ transform: `translate(-${currentIndex * 100}%)`}}
-					>
-						<img className="memberImage" src={member.image} />
-						<div className="carouselText">
-							<h2 className="memberName">{member.name}</h2>
-							<h3 className="memberRole">{member.role}</h3>
-							<Scrollbars
-								style={{ width: '100%', height: 300 }}
-								renderTrackVertical={props => <div {...props} className='track-vertical'></div>}
-								renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-							>
-								<div className="memberBioWrapper">
-									{member.bio.split('\n').map((line, index) => (<p key={`${member.name}${index}`} className="memberBio">{line}</p>))}
-								</div>
+			<div className="aboutBackground">
+				<Button id="leftArrow" className="navigationButton" text="<" wrapperStyle={{ fontSize: '2em' }} callback={() => handleNav('back')}/>
+				<div className="carouselContainer">
+					{bandMembers.map(member => (
+						<div
+							className="carouselItem"
+							key={member.name.toLowerCase().split(' ').join('')}
+							style={{ transform: `translate(-${currentIndex * (132)}%)`}}
+						>
+							<img className="memberImage" src={member.image} />
+							<div className="carouselText">
+								<h2 className="memberName">{member.name}</h2>
+								<h3 className="memberRole">{member.role}</h3>
+								<Scrollbars
+									style={{ width: '100%', height: 300 }}
+									renderTrackVertical={props => <div {...props} className='track-vertical'></div>}
+									renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+								>
+									<div className="memberBioWrapper">
+										{member.bio.split('\n').map((line, index) => (<p key={`${member.name}${index}`} className="memberBio">{line}</p>))}
+									</div>
 
-							</Scrollbars>
+								</Scrollbars>
+							</div>
 						</div>
-					</div>
-				))}
+					))}
+					<div className="leftGradient" />
+					<div className="rightGradient" />
+				</div>
+				<Button id="rightArrow" className="navigationButton" text=">" wrapperStyle={{ fontSize: '2em' }} callback={() => handleNav('forwards')}/>
 			</div>
-			<Button id="rightArrow" className="navigationButton" text=">" wrapperStyle={{ fontSize: '2em' }} callback={() => handleNav('forwards')}/>
+			<div className="buffer" />
 		</div>
 	);
 }
