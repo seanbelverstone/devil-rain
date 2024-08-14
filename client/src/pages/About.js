@@ -115,7 +115,7 @@ function About() {
 						<div
 							className="carouselItem"
 							key={member.name.toLowerCase().split(' ').join('')}
-							style={{ transform: `translate(-${currentIndex * 100}%)`}}
+							style={{ transform: `translate(-${currentIndex * (132)}%)`}}
 						>
 							<img className="memberImage" src={member.image} />
 							<div className="carouselText">
