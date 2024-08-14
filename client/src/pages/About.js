@@ -108,33 +108,38 @@ function About() {
 	return (
 		<div className="page">
 			<h1 className="title">About Us</h1>
-			<Button id="leftArrow" className="navigationButton" text="<" wrapperStyle={{ fontSize: '2em' }} callback={() => handleNav('back')}/>
-			<div className="carouselContainer">
-				{bandMembers.map(member => (
-					<div
-						className="carouselItem"
-						key={member.name.toLowerCase().split(' ').join('')}
-						style={{ transform: `translate(-${currentIndex * 100}%)`}}
-					>
-						<img className="memberImage" src={member.image} />
-						<div className="carouselText">
-							<h2 className="memberName">{member.name}</h2>
-							<h3 className="memberRole">{member.role}</h3>
-							<Scrollbars
-								style={{ width: '100%', height: 300 }}
-								renderTrackVertical={props => <div {...props} className='track-vertical'></div>}
-								renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
-							>
-								<div className="memberBioWrapper">
-									{member.bio.split('\n').map((line, index) => (<p key={`${member.name}${index}`} className="memberBio">{line}</p>))}
-								</div>
+			<div className="aboutBackground">
+				<Button id="leftArrow" className="navigationButton" text="<" wrapperStyle={{ fontSize: '2em' }} callback={() => handleNav('back')}/>
+				<div className="carouselContainer">
+					{bandMembers.map(member => (
+						<div
+							className="carouselItem"
+							key={member.name.toLowerCase().split(' ').join('')}
+							style={{ transform: `translate(-${currentIndex * 100}%)`}}
+						>
+							<img className="memberImage" src={member.image} />
+							<div className="carouselText">
+								<h2 className="memberName">{member.name}</h2>
+								<h3 className="memberRole">{member.role}</h3>
+								<Scrollbars
+									style={{ width: '100%', height: 300 }}
+									renderTrackVertical={props => <div {...props} className='track-vertical'></div>}
+									renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+								>
+									<div className="memberBioWrapper">
+										{member.bio.split('\n').map((line, index) => (<p key={`${member.name}${index}`} className="memberBio">{line}</p>))}
+									</div>
 
-							</Scrollbars>
+								</Scrollbars>
+							</div>
 						</div>
-					</div>
-				))}
+					))}
+					<div className="leftGradient" />
+					<div className="rightGradient" />
+				</div>
+				<Button id="rightArrow" className="navigationButton" text=">" wrapperStyle={{ fontSize: '2em' }} callback={() => handleNav('forwards')}/>
 			</div>
-			<Button id="rightArrow" className="navigationButton" text=">" wrapperStyle={{ fontSize: '2em' }} callback={() => handleNav('forwards')}/>
+			<div className="buffer" />
 		</div>
 	);
 }
