@@ -20,7 +20,7 @@
   position: relative;
   align-items: center;
   justify-content: center;
-	margin-top: -10%;
+	margin-top: -15%;
 }
 
 .bandNameBackground, #bandName {
@@ -42,13 +42,13 @@
 
 @media (max-width: 1500px) {
 	#bandNameSection {
-		margin-top: -10%;
+		margin-top: -15%;
 	}
 }
 
 @media (max-width: 1200px) {
 	#bandNameSection {
-		margin-top: -5%;
+		margin-top: -10%;
 	}
 }
 
