@@ -29,6 +29,7 @@ module.exports = {
 			const type = $(element).find(".subit").find('.tabgi').find('.tabgi-fee').text();
 			const img = $(element).find('.imgfit').find("img").attr("data-src")
 			const backupImg = $(element).find('.imgfit').find("img").attr("src");
+			const cancelled = $(element).find('.subit').find('.cancelled').text();
 
 			reqBody = {
 				position: i,
@@ -37,7 +38,8 @@ module.exports = {
 				location: splitLocation,
 				description,
 				type,
-				img: `https://www.lemonrock.com/${img ? img : backupImg}`
+				img: `https://www.lemonrock.com/${img ? img : backupImg}`,
+				cancelled: cancelled === 'CANCELLED'
 			}
 		db.Gig
 		.create(reqBody)
