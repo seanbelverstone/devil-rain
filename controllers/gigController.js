@@ -22,23 +22,24 @@ module.exports = {
 			const date = dateObj.find(".new-day").text()
 			const fullDate = `${day} ${date} ${month}`;
 
-			const time = $(element).find(".subit").find('.tabgi').find('.tabgi-time').text();
-			const location = $(element).find(".subit").text();
-			const splitLocation = location.split('\n')[0].split('at ')[1];
-			const description = $(element).find('.subit').find('.ipe').text();
-			const type = $(element).find(".subit").find('.tabgi').find('.tabgi-fee').text();
+			const time = $(element).find('.tabgi').find('.tabgi-time').text();
+			// const location1 = $(element).find("a").find("strong").text();
+			const location = $(element).find("a").text();
+			// const joinedLocation = `${location1}, ${location2}`;
+			const description = $(element).find('.ipe').text();
+			const type = $(element).find('.tabgi').find('.tabgi-fee').text();
 			const img = $(element).find('.imgfit').find("img").attr("data-src")
 			const backupImg = $(element).find('.imgfit').find("img").attr("src");
-			const cancelled = $(element).find('.subit').find('.cancelled').text();
+			const cancelled = $(element).find('.cancelled').text();
 
 			reqBody = {
 				position: i,
 				date: fullDate,
 				time,
-				location: splitLocation,
+				location: location?.split('Devil Rain')[1],
 				description,
 				type,
-				img: `https://www.lemonrock.com/${img ? img : backupImg}`,
+				img: img ? img : backupImg,
 				cancelled: cancelled === 'CANCELLED'
 			}
 		db.Gig
