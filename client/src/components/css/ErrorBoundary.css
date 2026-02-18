@@ -1,0 +1,16 @@
+#errorPage {
+	flex-direction: column;
+}
+
+.errorWrapper {
+	padding: 5em;
+	text-wrap: wrap;
+	width: auto;
+	max-width: 100vw;
+}
+
+@media (max-width: 450px) {
+	.errorWrapper {
+		padding: 1.5em;
+	}
+}

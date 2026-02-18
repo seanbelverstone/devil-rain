@@ -12,14 +12,14 @@ export const GigCard = props => {
 	return (
 		<div className="gigCard" style={{ backgroundColor: cancelled ? 'var(--background-color-light' : 'var(--background-color)' }} >
 			<div className="dateWrapper">
-				{date.split(' ').map((d, i) => (
+				{date?.split(' ').map((d, i) => (
 					<div key={`${d}_${i}`} className={`date${i}`}>{d}</div>
 				))}
 			</div>
 			<div className="gigTime">{time}</div>
 			<div className="locationWrapper">
 				{location?.split(',').map((loc, i) => {
-					const queryParams = `${loc.split(' ').join('+')}+${location?.split(', ')[1]}`;
+					const queryParams = `${loc?.split(' ').join('+')}+${location?.split(', ')[1]}`;
 					// query params will be sent like The+Crooklets+Inn+Bude
 					if (i === 0 && loc !== 'Private Function') {
 						return (
