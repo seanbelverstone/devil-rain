@@ -8,7 +8,7 @@ import Gigs from './pages/Gigs';
 import Videos from './pages/Videos';
 import Contact from './pages/Contact';
 import Merch from './pages/Merch';
-import { ErrorFallback } from './components/ErrorBoundary';
+import { ErrorFallback } from './components/ErrorFallback';
 
 const App = () => {
 
