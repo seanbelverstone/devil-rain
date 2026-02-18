@@ -18,7 +18,7 @@ export const GigCard = props => {
 			</div>
 			<div className="gigTime">{time}</div>
 			<div className="locationWrapper">
-				{location?.split(',').map((loc, i) => {
+				{location.split(',').map((loc, i) => {
 					const queryParams = `${loc.split(' ').join('+')}+${location?.split(', ')[1]}`;
 					// query params will be sent like The+Crooklets+Inn+Bude
 					if (i === 0 && loc !== 'Private Function') {
