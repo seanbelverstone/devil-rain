@@ -23,8 +23,7 @@ module.exports = {
 			const fullDate = `${day} ${date} ${month}`;
 
 			const time = $(element).find('.tabgi').find('.tabgi-time').text();
-			// const location = $(element).find("a").text();
-			const location = undefined;
+			const location = $(element).find("a").text();
 			const description = $(element).find('.ipe').text();
 			const type = $(element).find('.tabgi').find('.tabgi-fee').text();
 			const img = $(element).find('.imgfit').find("img").attr("data-src")
